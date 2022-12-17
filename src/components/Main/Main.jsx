@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import { Header } from 'components/Header/Header'
 import { StartPage } from 'components/StartPage/StartPage'
 import { Clues } from 'components/Clues/Clues'
+import { Answering } from 'components/Answering/Answering'
 
 /* const reducer = combineReducers({
   quiz: questions.reducer
@@ -30,6 +31,7 @@ export const Main = () => {
           <Route>
             <Route path="/" element={<StartPage />} />
             <Route path="/clues" element={<Clues />} />
+            <Route path="/guess" element={<Answering />} />
           </Route>
         </Routes>
       </BrowserRouter>

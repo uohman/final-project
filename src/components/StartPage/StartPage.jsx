@@ -10,7 +10,7 @@ export const StartPage = () => {
   return (
     <div>
       <h1>This is StreetSmart!</h1>
-      <h2>The game where we are trying to answer the question: “Where are we headed?”</h2>
+      <h2>Can you figure out where we are headed?</h2>
       <Link to="/clues">
         <button type="button" className="button">START</button>
       </Link>
