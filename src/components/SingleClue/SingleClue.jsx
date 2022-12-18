@@ -22,12 +22,15 @@ export const SingleClue = () => {
 
   return (
     <div>
-      {questions.map((question) => (
+      <div> <h2>{questions.length ? questions[0].clue1 : ''}</h2> </div>
+      {/* {questions.map((question, id) => (
+        id === 0 ? <div key={id}><h2>{question.clue1}</h2></div> : null))} */}
+      {/* {questions.map((question) => (
         <div key={question.id}>
           <h2>{question.clue1}</h2>
           <p>{question.clue2}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }
