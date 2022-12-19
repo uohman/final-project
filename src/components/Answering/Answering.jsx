@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 // import { fetchQuestions } from 'api';
+import { AutoComplete } from 'components/AutoComplete/AutoComplete';
 
 export const Answering = () => {
 /*   const [startGame, setStartGame] = useState('')
@@ -15,6 +16,7 @@ export const Answering = () => {
   return (
     <div>
       This is the answering component
+      <AutoComplete />
     </div>
   );
 }
