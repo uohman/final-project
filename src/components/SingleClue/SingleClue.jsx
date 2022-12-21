@@ -22,7 +22,10 @@ export const SingleClue = () => {
 
   return (
     <div>
-      <div> <h2>{questions.length ? questions[0].clue1 : ''}</h2> </div>
+      <div>
+        <h2>{questions.length ? questions[0].clue1 : ''}</h2>
+        <button type="button">I want to keep on going</button>
+      </div>
       {/* {questions.map((question, id) => (
         id === 0 ? <div key={id}><h2>{question.clue1}</h2></div> : null))} */}
       {/* {questions.map((question) => (
