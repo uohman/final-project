@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react';
 // import { questions } from 'reducers/questions';
 // import { index } from 'api';
 
+import { SingleClueContainer } from './SingleClue.Styles'
+
 export const SingleClue = () => {
-  const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState([]) // Fetch data
+  const [currentQuestion, setCurrentQuestion] = useState(0); // Show current clue
 
   const fetchData = () => {
     fetch('https://final-project-api-veooltntuq-lz.a.run.app/questions')
@@ -16,16 +19,33 @@ export const SingleClue = () => {
       })
   }
 
+  const handleClick = () => {
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      alert('Time to make a guess');
+    }
+    setCurrentQuestion(nextQuestion);
+  };
+
   useEffect(() => {
     fetchData()
   }, [])
 
+  const activeQuestion = questions[currentQuestion];
+
   return (
-    <div>
+    <SingleClueContainer>
       <div>
-        <h2>{questions.length ? questions[0].clue1 : ''}</h2>
-        <button type="button">I want to keep on going</button>
+        <span>Clue {currentQuestion + 1}:</span>
       </div>
+      <div>
+        <h3>{activeQuestion && activeQuestion.clue1}</h3>
+        {/* <h2>{questions.length ? questions[0].clue1 : ''}</h2> */}
+        <button type="button" onClick={() => handleClick()}>I want another clue</button>
+      </div>
+
       {/* {questions.map((question, id) => (
         id === 0 ? <div key={id}><h2>{question.clue1}</h2></div> : null))} */}
       {/* {questions.map((question) => (
@@ -34,7 +54,7 @@ export const SingleClue = () => {
           <p>{question.clue2}</p>
         </div>
       ))} */}
-    </div>
+    </SingleClueContainer>
   )
 }
 

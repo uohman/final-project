@@ -1,3 +1,19 @@
+:root {
+  /*   --fw-padding: 0 88px;
+    --fw-padding-xy: 0 88px 48px 168px;
+    --fw-padding-xy-mobile: 180px 50px 24px;
+    --fw-padding-xy-mobile-lg: 0 50px 24px 50px; */
+  
+    --color-black: #131514;
+    --color-white: #fffffa;
+    --color-background: #eebece;
+    --color-primary: #206246;
+    --color-secondary: #fe8982;
+    --color-cream: #fff6ed;
+  
+/*     --font-main: 'Montserrat', sans-serif;
+ */  }
+
 *,
 body,
 div {
