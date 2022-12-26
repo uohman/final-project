@@ -7,10 +7,12 @@ import { SingleClueContainer } from './SingleClue.Styles'
 
 export const SingleClue = () => {
   const [games, setGames] = useState([]) // Fetch data
+  const [loading, setLoading] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [level, setLevel] = useState(5);
 
   const fetchData = () => {
+    setLoading(true);
     fetch('https://final-project-api-veooltntuq-lz.a.run.app/games')
       .then((response) => {
         return response.json()
@@ -18,6 +20,8 @@ export const SingleClue = () => {
       .then((response) => {
         setGames(response.games)
       })
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
   }
 
   const handleClick = () => {
@@ -37,6 +41,10 @@ export const SingleClue = () => {
   const activeQuestion = games[currentQuestion];
 
   const nextQuestion = currentQuestion + 1;
+
+  if (loading) {
+    return <p>Loading clues...</p>
+  }
 
   return (
     <SingleClueContainer>
