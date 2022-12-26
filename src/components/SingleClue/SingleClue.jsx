@@ -6,23 +6,24 @@ import React, { useState, useEffect } from 'react';
 import { SingleClueContainer } from './SingleClue.Styles'
 
 export const SingleClue = () => {
-  const [questions, setQuestions] = useState([]) // Fetch data
-  const [currentQuestion, setCurrentQuestion] = useState(0); // Show current clue
+  const [games, setGames] = useState([]) // Fetch data
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [level, setLevel] = useState(5);
 
   const fetchData = () => {
-    fetch('https://final-project-api-veooltntuq-lz.a.run.app/questions')
+    fetch('https://final-project-api-veooltntuq-lz.a.run.app/games')
       .then((response) => {
         return response.json()
       })
       .then((response) => {
-        setQuestions(response.questions)
+        setGames(response.games)
       })
   }
 
   const handleClick = () => {
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
+    if (nextQuestion < 5) {
+      /* setCurrentQuestion(nextQuestion) && */ setLevel(level - 1);
     } else {
       alert('Time to make a guess');
     }
@@ -33,18 +34,26 @@ export const SingleClue = () => {
     fetchData()
   }, [])
 
-  const activeQuestion = questions[currentQuestion];
+  const activeQuestion = games[currentQuestion];
+
+  const nextQuestion = currentQuestion + 1;
 
   return (
     <SingleClueContainer>
-      <div>
-        <span>Clue {currentQuestion + 1}:</span>
-      </div>
-      <div>
-        <h3>{activeQuestion && activeQuestion.clue1}</h3>
-        {/* <h2>{questions.length ? questions[0].clue1 : ''}</h2> */}
-        <button type="button" onClick={() => handleClick()}>I want another clue</button>
-      </div>
+      {nextQuestion < 6 ? ( // Show the following if index number is less than 6
+        <div>
+          <div>
+            <span>Clue {currentQuestion + 1}:</span>
+            <h2>{activeQuestion && activeQuestion.gameOne}</h2>
+          </div>
+        </div>
+      ) : (
+        null
+      )}
+
+      <h3>Current level: {level}</h3>
+      {/* <h2>{questions.length ? questions[0].clue1 : ''}</h2> */}
+      <button type="button" onClick={() => handleClick()}>I want another clue</button>
 
       {/* {questions.map((question, id) => (
         id === 0 ? <div key={id}><h2>{question.clue1}</h2></div> : null))} */}
@@ -57,62 +66,3 @@ export const SingleClue = () => {
     </SingleClueContainer>
   )
 }
-
-/* export const SingleClue = () => {
-    const [questions, setQuestions] = useState([])
-
-    const fetchData = () => {
-      fetch('https://jsonplaceholder.typicode.com/users')
-        .then((response) => {
-          return response.json()
-        })
-        .then((data) => {
-          setQuestions(data)
-        })
-    }
-
-    useEffect(() => {
-      fetchData()
-    }, [])
-
-    return (
-      <div>
-        <ul>
-          {questions.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-
-      </div>
-    )
-  } */
-
-/* export const SingleClue = () => {
-    const [clues, setClues] = useState([]);
-
-    const fetchQuestions = () => {
-      fetch('https://final-project-api-veooltntuq-lz.a.run.app/questions')
-        .then((response) => response.json())
-        .then((data) => setClues(data));
-      // .then((questions) => console.log('questions', questions))
-    }
-
-    useEffect(() => {
-      fetchQuestions();
-    }, []);
-
-    return (
-      <div>
-        This is the single clue component
-        <ul>
-          {clues && clues.map((clue) => (
-            <li key={clue.id}>{clue.clue1}</li>
-          ))}
-        </ul>
-        <button type="button" className="button">I want to keep on going</button>
-        <Link to="/guess">
-          <button type="button" className="button">Stop! I want to make a guess!</button>
-        </Link>
-      </div>
-    );
-  } */

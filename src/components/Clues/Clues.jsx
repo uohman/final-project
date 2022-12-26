@@ -29,7 +29,7 @@ export const Clues = () => {
 
       {/* {toggleKeepGoingButton && <button type="button" onClick={handleClick}>I want to keep on going</button>} */}
       <Link to="/guess">
-        <button type="button" className="button">Stop! I want to make a guess!</button>
+        <button type="button" className="button">I want to make a guess!</button>
       </Link>
 
     </div>

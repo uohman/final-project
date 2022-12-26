@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import { fetchPlace } from 'api/index.js';
 
 export const AutoComplete = () => {
@@ -23,7 +24,7 @@ export const AutoComplete = () => {
       <div className="placesAutocomplete">
         <div className="placesAutocomplete__inputWrap">
           <label htmlFor="city" className="label">
-            Your city
+            We are headed to:
             {autocompleteErr && (
               <span className="inputError">{autocompleteErr}</span>
             )}
@@ -44,9 +45,11 @@ export const AutoComplete = () => {
             ))}
           </datalist>
           <span className="placesAutocomplete__hint">
-            *start typing and choose your city from the given options
+            *start typing and choose city from the given options
           </span>
-          <button type="submit">Submit</button>
+          <Link to="/summary">
+            <button type="submit">Submit</button>
+          </Link>
         </div>
       </div>
     </form>
