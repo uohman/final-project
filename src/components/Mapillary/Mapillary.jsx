@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Viewer } from 'mapillary-js';
+// import env from 'react-dotenv';
 
 class ViewerComponent extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class ViewerComponent extends Component {
 export const Mapillary = (props) => {
   return (
     <ViewerComponent
-      accessToken="MLY|ACCESSTOKENCHANGEME"
+      accessToken="MAPILLARY_ACCESS_TOKEN"
       imageId={props.imageId}
       style={{ width: props.width, height: props.height }} />
   );
