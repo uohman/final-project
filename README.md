@@ -7,9 +7,10 @@ Add components in the `src` folder and use them in `src/app.js` to get started.
 ## Usage
 
 1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+2. Clone the new repo to your computer
+3. Install required dependencies with npm: `npm install`
+4. Creat a `.env` file and set the value for the client token `REACT_APP_MAPILLARY_CLIENT_TOKEN=MLY|...`
+6. Start the project: `npm start`
 
 Alternatively, if you don't want a new git repo on your account;
 
