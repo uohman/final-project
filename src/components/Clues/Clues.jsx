@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 // import { StreetView } from 'components/StreetView';
 import { SingleClue } from 'components/SingleClue/SingleClue';
+import { Mapillary } from 'components/Mapillary/Mapillary';
 
 export const Clues = () => {
   const [isShown, setIsShown] = useState(false); // Show SingleClue component
@@ -22,7 +23,7 @@ export const Clues = () => {
   return (
     <div>
       This is the Clues component
-      {/* <StreetView /> */}
+      <Mapillary width="500px" height="300px" imageId="498763468214164" />
 
       {isShown && <SingleClue />}
       {toggleClueButton && <button type="button" onClick={handleClick}>CLUE</button>}
