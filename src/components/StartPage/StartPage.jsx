@@ -1,19 +1,17 @@
 /* eslint-disable max-len */
 import React from 'react';
-// import { Link } from 'react-router-dom'
-// import { useDispatch } from 'react-redux'
-// import { questions, fetchQuestions } from 'reducers/questions';
 
-// import { Questions } from 'components/Questions/Questions'
+import { Wrapper, UppercaseSubheading, Heading, Subheading, PrimaryButton } from 'GlobalStyles';
 
 export const StartPage = ({ onStepChange }) => {
   return (
-    <div>
-      <h1>This is StreetSmart!</h1>
-      <h2>Can you figure out where we are headed?</h2>
+    <Wrapper>
 
-      <button type="button" className="button" onClick={onStepChange}>START</button>
+      <UppercaseSubheading>Welcome to</UppercaseSubheading>
+      <Heading>StreetSmart</Heading>
+      <Subheading>Can you figure out where we are headed?</Subheading>
+      <PrimaryButton type="button" className="button" onClick={onStepChange}>START</PrimaryButton>
 
-    </div>
+    </Wrapper>
   );
 }

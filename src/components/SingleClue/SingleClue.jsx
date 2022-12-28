@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 // import { questions } from 'reducers/questions';
 
-import { Answering } from 'components/Answering/Answering'
+// import { Answering } from 'components/Answering/Answering'
+import { Paragraph, PrimaryButton } from 'GlobalStyles';
 import { SingleClueContainer } from './SingleClue.Styles'
 
 export const SingleClue = () => {
@@ -45,21 +46,21 @@ export const SingleClue = () => {
     return <p>Loading clues...</p>
   }
 
-  if (nextQuestion > 5) {
-    return <Answering />;
-  } else {
+  if (nextQuestion < 6) {
+    /* return <Answering />;
+  } else { */
     return (
       <SingleClueContainer>
         <div>
           <div>
-            <span>Clue {currentQuestion + 1}:</span>
-            <h2>{activeQuestion && activeQuestion.gameOne}</h2>
+            {/* <span>Clue {currentQuestion + 1}:</span> */}
+            <Paragraph>{activeQuestion && activeQuestion.gameOne}</Paragraph>
           </div>
         </div>
 
         <h3>Current level: {level}</h3>
 
-        <button type="button" onClick={() => handleClick()}>I want another clue</button>
+        <PrimaryButton type="button" onClick={() => handleClick()}>I want another clue</PrimaryButton>
 
       </SingleClueContainer>
     )

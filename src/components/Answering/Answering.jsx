@@ -1,22 +1,60 @@
-/* eslint-disable max-len */
-import React from 'react';
-// import { fetchQuestions } from 'api';
-import { AutoComplete } from 'components/AutoComplete/AutoComplete';
+/* eslint-disable no-unused-expressions */
+import React, { useState } from 'react';
+import { fetchPlace } from 'api/index.js';
 
-export const Answering = () => {
-/*   const [startGame, setStartGame] = useState('')
-  // const [firstQuestion, setFirstQuestion] = useSelector((state) => state.questions.questions[state.questions.currentClue])
-  const dispatch = useDispatch();
+import { PrimaryButton } from 'GlobalStyles';
 
-  const onAction = () => {
-  console.log(startGame)
-  dispatch(questions.actions.setStartGame(startGame))
-  dispatch(fetchQuestions()) */
+// import { AutoComplete } from 'components/AutoComplete/AutoComplete';
+
+export const Answering = ({ onStepChange }) => {
+  const [city, setCity] = useState('');
+  const [autocompleteCities, setAutocompleteCities] = useState([]);
+  const [autocompleteErr, setAutocompleteErr] = useState('');
+
+  const handleCityChange = async (e) => {
+    setCity(e.target.value);
+    if (!city) return;
+
+    const res = await fetchPlace(city);
+    !autocompleteCities.includes(e.target.value)
+      && res.features
+      && setAutocompleteCities(res.features.map((place) => place.place_name));
+    res.error ? setAutocompleteErr(res.error) : setAutocompleteErr('');
+  };
 
   return (
-    <div>
-      This is the answering component
-      <AutoComplete />
-    </div>
+    <form>
+      <div className="placesAutocomplete">
+        <div className="placesAutocomplete__inputWrap">
+          <label htmlFor="city" className="label">
+            We are headed to:
+            {autocompleteErr && (
+              <span className="inputError">{autocompleteErr}</span>
+            )}
+          </label>
+          <input
+            list="places"
+            type="text"
+            id="city"
+            name="city"
+            onChange={handleCityChange}
+            value={city}
+            required
+            pattern={autocompleteCities.join('|')}
+            autoComplete="off" />
+          <datalist id="places">
+            {autocompleteCities.map((singleCity) => (
+              <option key={singleCity}>{singleCity}</option>
+            ))}
+          </datalist>
+          <span className="placesAutocomplete__hint">
+            *start typing and choose city from the given options
+          </span>
+
+          <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
+
+        </div>
+      </div>
+    </form>
   );
-}
+};
