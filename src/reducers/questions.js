@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import { ui } from './ui';
+// import { ui } from './ui';
 
 const initialState = {
   startGame: false,
@@ -28,7 +28,7 @@ export const questions = createSlice({
   }
 });
 
-export const fetchQuestions = () => {
+/* export const fetchQuestions = () => {
   return (dispatch) => {
     dispatch(ui.actions.setLoading(true));
     const option = {
@@ -42,4 +42,4 @@ export const fetchQuestions = () => {
       .then((getQuestions) => console.log('getQuestions', getQuestions))
       .finally(() => dispatch(ui.actions.setLoading(false)))
   }
-}
+} */

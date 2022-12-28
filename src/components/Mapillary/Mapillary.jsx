@@ -30,7 +30,7 @@ class ViewerComponent extends Component {
 export const Mapillary = (props) => {
   return (
     <ViewerComponent
-      accessToken="MAPILLARY_ACCESS_TOKEN"
+      accessToken={process.env.REACT_APP_MAPILLARY_CLIENT_TOKEN}
       imageId={props.imageId}
       style={{ width: props.width, height: props.height }} />
   );

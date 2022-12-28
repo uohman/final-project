@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
 // import { questions } from 'reducers/questions';
 
 import { Answering } from 'components/Answering/Answering'
@@ -59,20 +58,9 @@ export const SingleClue = () => {
         </div>
 
         <h3>Current level: {level}</h3>
-        {/* <h2>{questions.length ? questions[0].clue1 : ''}</h2> */}
-        <button type="button" onClick={() => handleClick()}>I want another clue</button>
-        <Link to="/guess">
-          <button type="button" className="button">I want to make a guess!</button>
-        </Link>
 
-        {/* {questions.map((question, id) => (
-        id === 0 ? <div key={id}><h2>{question.clue1}</h2></div> : null))} */}
-        {/* {questions.map((question) => (
-        <div key={question.id}>
-          <h2>{question.clue1}</h2>
-          <p>{question.clue2}</p>
-        </div>
-      ))} */}
+        <button type="button" onClick={() => handleClick()}>I want another clue</button>
+
       </SingleClueContainer>
     )
   }

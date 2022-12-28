@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
 import { fetchPlace } from 'api/index.js';
 
-export const AutoComplete = () => {
+export const AutoComplete = ({ onStepChange }) => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
@@ -47,9 +46,9 @@ export const AutoComplete = () => {
           <span className="placesAutocomplete__hint">
             *start typing and choose city from the given options
           </span>
-          <Link to="/summary">
-            <button type="submit">Submit</button>
-          </Link>
+
+          <button type="submit" onClick={onStepChange}>Submit</button>
+
         </div>
       </div>
     </form>

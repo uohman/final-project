@@ -1,45 +1,45 @@
-import React from 'react';
-// import { Provider } from 'react-redux';
-// import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // import { questions } from 'reducers/questions';
-// import { ui } from 'reducers/ui';
+import { ui } from 'reducers/ui';
 
 import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
+// import { SingleClue } from 'components/SingleClue/SingleClue';
 import { Clues } from 'components/Clues/Clues'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';
-import { NotFound } from 'components/NotFound/NotFound'
+// import { NotFound } from 'components/NotFound/NotFound'
 
-/* const reducer = combineReducers({
-  quiz: questions.reducer
+const reducer = combineReducers({
+  ui: ui.reducer
 });
 
-const store = configureStore({ reducer }); */
+const store = configureStore({ reducer });
 
 export const Main = () => {
-/*   const reducer = combineReducers({
+  const [step, setStep] = useState(1);
+  /*   const reducer = combineReducers({
     questions: questions.reducer,
     ui: ui.reducer
   })
   const store = configureStore({ reducer }) */
 
+  const handleStepChange = () => {
+    setStep(step + 1);
+  };
+
   return (
-    <div>
+    <Provider store={store}>
       <NavBar />
-      <BrowserRouter>
-        <Routes>
-          <Route>
-            <Route path="/" element={<StartPage />} />
-            <Route path="/clues" element={<Clues />} />
-            <Route path="/guess" element={<Answering />} />
-            <Route path="/summary" element={<Summary />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+      {step === 1 && <StartPage onStepChange={handleStepChange} />}
+      {step === 2 && <Clues onStepChange={handleStepChange} />}
+      {step === 3 && <Answering onStepChange={handleStepChange} />}
+      {step === 4 && (<Summary />)}
+
+    </Provider>
   );
 }

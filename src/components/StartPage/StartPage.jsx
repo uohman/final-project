@@ -1,19 +1,19 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
 // import { questions, fetchQuestions } from 'reducers/questions';
 
 // import { Questions } from 'components/Questions/Questions'
 
-export const StartPage = () => {
+export const StartPage = ({ onStepChange }) => {
   return (
     <div>
       <h1>This is StreetSmart!</h1>
       <h2>Can you figure out where we are headed?</h2>
-      <Link to="/clues">
-        <button type="button" className="button">START</button>
-      </Link>
+
+      <button type="button" className="button" onClick={onStepChange}>START</button>
+
     </div>
   );
 }
