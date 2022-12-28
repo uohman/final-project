@@ -1,8 +1,8 @@
-export const fetchQuestions = (id) => {
+/* export const fetchClues = (id) => {
   return (fetch(`https://final-project-api-veooltntuq-lz.a.run.app/questions/${id}`)
     .then((data) => data.json)
   )
-}
+} */
 
 // Fetch citites for autocomplete
 export const fetchPlace = async (text) => {
