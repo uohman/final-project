@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Viewer } from 'mapillary-js';
-// import env from 'react-dotenv';
 
 class ViewerComponent extends Component {
   constructor(props) {

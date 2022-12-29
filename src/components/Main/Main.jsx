@@ -6,7 +6,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // import { questions } from 'reducers/questions';
 import { ui } from 'reducers/ui';
 
-// import { NavBar } from 'components/NavBar/NavBar';
+import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
 // import { SingleClue } from 'components/SingleClue/SingleClue';
 import { Clues } from 'components/Clues/Clues'
@@ -35,6 +35,7 @@ export const Main = () => {
 
   return (
     <Provider store={store}>
+      <NavBar />
       <OuterWrapper>
         <InnerWrapper>
           {step === 1 && <StartPage onStepChange={handleStepChange} />}

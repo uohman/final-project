@@ -18,7 +18,7 @@ export const Clues = ({ onStepChange }) => {
 
   return (
     <div>
-      <Mapillary width="500px" height="300px" imageId="498763468214164" />
+      <Mapillary width="auto" height="300px" imageId="498763468214164" />
 
       {isShown && <SingleClue />}
       <ButtonContainer>

@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { fetchPlace } from 'api/index.js';
 
-import { PrimaryButton } from 'GlobalStyles';
+import { Wrapper, PrimaryButton } from 'GlobalStyles';
+import { Label, Input, Span } from './Answering.Styles'
 
 // import { AutoComplete } from 'components/AutoComplete/AutoComplete';
 
@@ -25,14 +26,14 @@ export const Answering = ({ onStepChange }) => {
   return (
     <form>
       <div className="placesAutocomplete">
-        <div className="placesAutocomplete__inputWrap">
-          <label htmlFor="city" className="label">
+        <Wrapper className="placesAutocomplete__inputWrap">
+          <Label htmlFor="city" className="label">
             We are headed to:
             {autocompleteErr && (
               <span className="inputError">{autocompleteErr}</span>
             )}
-          </label>
-          <input
+          </Label>
+          <Input
             list="places"
             type="text"
             id="city"
@@ -47,13 +48,13 @@ export const Answering = ({ onStepChange }) => {
               <option key={singleCity}>{singleCity}</option>
             ))}
           </datalist>
-          <span className="placesAutocomplete__hint">
+          <Span className="placesAutocomplete__hint">
             *start typing and choose city from the given options
-          </span>
+          </Span>
 
           <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
 
-        </div>
+        </Wrapper>
       </div>
     </form>
   );
