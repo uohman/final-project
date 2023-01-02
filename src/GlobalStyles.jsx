@@ -34,6 +34,7 @@ export const Wrapper = styled.div`
 
 export const Heading = styled.h1`
     font-family: var(--font-primary);
+    color: var(--color-white);
     font-weight: 400;
     text-align: center;
     font-size: 5.5rem;
@@ -41,6 +42,7 @@ export const Heading = styled.h1`
 
 export const Subheading = styled.h2`
     font-family: var(--font-primary);
+    color: var(--color-white);
     font-weight: 400;
     text-align: center;
     font-size: 1.5rem;
@@ -48,6 +50,7 @@ export const Subheading = styled.h2`
 
 export const Span = styled.h3`
     font-family: var(--font-primary);
+    color: var(--color-white);
     font-weight: 400;
     text-align: center;
     font-size: 1.5rem;
@@ -57,6 +60,7 @@ export const Span = styled.h3`
 
 export const Paragraph = styled.p`
     font-family: var(--font-primary);
+    color: var(--color-white);
     font-weight: 400;
     text-align: left;
     font-size: 1rem;
@@ -66,7 +70,7 @@ export const Paragraph = styled.p`
 
 export const PrimaryButton = styled.button`
     color: var(--color-white);
-    background-color: var(--color-black);
+    background-color: var(--color-primary);
     font-family: var(--font-primary);
     font-size: 1rem;
     margin: 1.5rem 0 1rem;
@@ -74,7 +78,7 @@ export const PrimaryButton = styled.button`
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     border-style: none;
-    border: 4px solid var(--color-black);
+    // border: 4px solid var(--color-black);
     border-radius: 50px;
     /* width: 400px; */
 

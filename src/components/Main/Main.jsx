@@ -6,13 +6,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // import { questions } from 'reducers/questions';
 import { ui } from 'reducers/ui';
 
-import { NavBar } from 'components/NavBar/NavBar';
+// import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
 // import { SingleClue } from 'components/SingleClue/SingleClue';
 import { Clues } from 'components/Clues/Clues'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';
-import { InnerWrapper, OuterWrapper } from 'GlobalStyles';
+// import { InnerWrapper, OuterWrapper } from 'GlobalStyles';
 // import { NotFound } from 'components/NotFound/NotFound'
 
 const reducer = combineReducers({
@@ -35,15 +35,10 @@ export const Main = () => {
 
   return (
     <Provider store={store}>
-      <NavBar />
-      <OuterWrapper>
-        <InnerWrapper>
-          {step === 1 && <StartPage onStepChange={handleStepChange} />}
-          {step === 2 && <Clues onStepChange={handleStepChange} />}
-          {step === 3 && <Answering onStepChange={handleStepChange} />}
-          {step === 4 && (<Summary />)}
-        </InnerWrapper>
-      </OuterWrapper>
+      {step === 1 && <StartPage onStepChange={handleStepChange} />}
+      {step === 2 && <Clues onStepChange={handleStepChange} />}
+      {step === 3 && <Answering onStepChange={handleStepChange} />}
+      {step === 4 && (<Summary />)}
     </Provider>
   );
 }

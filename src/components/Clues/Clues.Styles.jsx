@@ -1,23 +1,39 @@
 import styled from 'styled-components/macro'
 import { PrimaryButton } from 'GlobalStyles';
 
-export const ButtonContainer = styled.div`
-    // outline: 1px solid red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+export const MapillaryContainer = styled.div`
+position: relative;
+z-index: 1;
 `
 
-export const SecondaryButton = styled(PrimaryButton)`
-    background: transparent;
-    color: var(--color-black);
+export const ButtonContainer = styled.div`
+    //outline: 1px solid red;
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+    flex-direction: row;
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 2;
+    width: 100vw;
+`
+
+export const ClueButton = styled(PrimaryButton)`
+    color: var(--color-white);
+    background: var(--color-primary);
+    margin: 0.7rem;
+    //z-index: 2;
+    //position: absolute;
+    
+    /* :hover {
+        color: var(--color-black);
+    } */
+`
+
+export const GuessButton = styled(ClueButton)`
+    background: var(--color-secondary);
     text-transform: none;
     letter-spacing: 0;
-    margin-top: 0;
-
-    :hover {
-        color: var(--color-black);
-        transform: scale(1.1);
-    }
+    // margin-top: 0;
 `

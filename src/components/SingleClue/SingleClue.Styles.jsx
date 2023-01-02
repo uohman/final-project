@@ -13,11 +13,18 @@ export const SingleClueContainer = styled.section`
 export const SpecialSpan = styled(Span)`
     // font-size: 1rem;
     // text-decoration: underline;
-    border-bottom: 4px solid var(--color-black);
+    color: var(--color-white);
+    border-bottom: 4px solid var(--color-white);
+    font-size: 2rem;
     margin-bottom: 0.5rem;
+/*  position: fixed;
+    top: 5rem;
+    right: 2rem;
+    z-index: 2; */
 `
 
 export const AnotherClueButton = styled(PrimaryButton)`
+    //color: var(--color-primary);
     text-transform: none;
     letter-spacing: 0;
 `

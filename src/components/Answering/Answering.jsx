@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import { fetchPlace } from 'api/index.js';
 
-import { Wrapper, PrimaryButton } from 'GlobalStyles';
+import { NavBar } from 'components/NavBar/NavBar';
+
+import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
 import { Label, Input, Span } from './Answering.Styles'
 
 // import { AutoComplete } from 'components/AutoComplete/AutoComplete';
@@ -24,38 +26,45 @@ export const Answering = ({ onStepChange }) => {
   };
 
   return (
-    <form>
-      <div className="placesAutocomplete">
-        <Wrapper className="placesAutocomplete__inputWrap">
-          <Label htmlFor="city" className="label">
-            We are headed to:
-            {autocompleteErr && (
-              <span className="inputError">{autocompleteErr}</span>
-            )}
-          </Label>
-          <Input
-            list="places"
-            type="text"
-            id="city"
-            name="city"
-            onChange={handleCityChange}
-            value={city}
-            required
-            pattern={autocompleteCities.join('|')}
-            autoComplete="off" />
-          <datalist id="places">
-            {autocompleteCities.map((singleCity) => (
-              <option key={singleCity}>{singleCity}</option>
-            ))}
-          </datalist>
-          <Span className="placesAutocomplete__hint">
-            *start typing and choose city from the given options
-          </Span>
+    <div>
+      <NavBar />
+      <OuterWrapper>
+        <InnerWrapper>
+          <form>
+            <div className="placesAutocomplete">
+              <Wrapper className="placesAutocomplete__inputWrap">
+                <Label htmlFor="city" className="label">
+                  We are headed to:
+                  {autocompleteErr && (
+                    <span className="inputError">{autocompleteErr}</span>
+                  )}
+                </Label>
+                <Input
+                  list="places"
+                  type="text"
+                  id="city"
+                  name="city"
+                  onChange={handleCityChange}
+                  value={city}
+                  required
+                  pattern={autocompleteCities.join('|')}
+                  autoComplete="off" />
+                <datalist id="places">
+                  {autocompleteCities.map((singleCity) => (
+                    <option key={singleCity}>{singleCity}</option>
+                  ))}
+                </datalist>
+                <Span className="placesAutocomplete__hint">
+                *start typing and choose city from the given options
+                </Span>
 
-          <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
+                <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
 
-        </Wrapper>
-      </div>
-    </form>
+              </Wrapper>
+            </div>
+          </form>
+        </InnerWrapper>
+      </OuterWrapper>
+    </div>
   );
 };
