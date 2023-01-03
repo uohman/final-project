@@ -34,12 +34,13 @@ export const SpecialSpan = styled(Span)`
     z-index: 2; */
 `
 
-export const SpecialParagraph = styled(Paragraph)`
+export const ClueParagraph = styled(Paragraph)`
     color: var(--color-white);
 `
 
 export const AnotherClueButton = styled(PrimaryButton)`
-    //color: var(--color-primary);
+    background: transparent;
+    border: 2px solid var(--color-white);
     text-transform: none;
     letter-spacing: 0;
 `

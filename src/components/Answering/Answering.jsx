@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import { fetchPlace } from 'api/index.js';
 
 import { NavBar } from 'components/NavBar/NavBar';
@@ -15,6 +16,7 @@ export const Answering = ({ onStepChange }) => {
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
 
+  /// Handling and fetching cities for auto complete
   const handleCityChange = async (e) => {
     setCity(e.target.value);
     if (!city) return;
@@ -25,6 +27,15 @@ export const Answering = ({ onStepChange }) => {
       && setAutocompleteCities(res.features.map((place) => place.place_name));
     res.error ? setAutocompleteErr(res.error) : setAutocompleteErr('');
   };
+
+  /// Store score in redux on submit
+  /*   const dispatch = useDispatch()
+
+  const onSubmitAnswer = (event) => {
+    event.preventDefault(event);
+    dispatch(game.actions.setScore(input));
+    setInput('');
+  }; */
 
   return (
     <div>
@@ -58,7 +69,6 @@ export const Answering = ({ onStepChange }) => {
                 <Span className="placesAutocomplete__hint">
                 *start typing and choose city from the given options
                 </Span>
-
                 <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
                 <Summary autocompleteCities={autocompleteCities} />
               </Wrapper>
