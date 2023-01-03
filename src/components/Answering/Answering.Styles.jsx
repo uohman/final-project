@@ -8,7 +8,7 @@ export const Label = styled(Paragraph)`
 export const Input = styled.input`
     border: none;
     background-color: var(--color-white);
-    outline-color: var(--color-black);
+    outline-color: var(--color-primary);
     padding: 10px;
     width: 100%;
     font-family: var(--font-primary);
@@ -19,4 +19,5 @@ export const Input = styled.input`
 
 export const Span = styled(Paragraph)`
     font-size: 0.8rem;
+    color: var(--color-primary);
 `

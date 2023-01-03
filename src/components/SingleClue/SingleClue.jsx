@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 // import { questions } from 'reducers/questions';
 
 // import { Answering } from 'components/Answering/Answering'
-import { Paragraph } from 'GlobalStyles';
-import { SingleClueContainer, SpecialSpan, AnotherClueButton } from './SingleClue.Styles'
+// import { Paragraph } from 'GlobalStyles';
+import { SingleClueContainer, SpecialSpan, SpecialParagraph, AnotherClueButton } from './SingleClue.Styles'
 
 export const SingleClue = () => {
   const [games, setGames] = useState([]) // Fetch clues
@@ -43,7 +43,7 @@ export const SingleClue = () => {
   const nextQuestion = currentQuestion + 1;
 
   if (loading) {
-    return <Paragraph>Loading clues...</Paragraph>
+    return <SpecialParagraph>Loading clues...</SpecialParagraph>
   }
 
   if (nextQuestion < 6) {
@@ -51,13 +51,11 @@ export const SingleClue = () => {
   } else { */
     return (
       <SingleClueContainer>
-        <div>
-          <div>
-            <SpecialSpan>Level: {level}</SpecialSpan>
-            {/* <span>Clue {currentQuestion + 1}:</span> */}
-            <Paragraph>{activeQuestion && activeQuestion.gameOne}</Paragraph>
-          </div>
-        </div>
+
+        <SpecialSpan>Level: {level}</SpecialSpan>
+        {/* <span>Clue {currentQuestion + 1}:</span> */}
+        <SpecialParagraph>{activeQuestion && activeQuestion.gameOne}</SpecialParagraph>
+
         <AnotherClueButton type="button" onClick={() => handleClick()}>I want another clue</AnotherClueButton>
       </SingleClueContainer>
     )

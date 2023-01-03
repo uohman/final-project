@@ -21,7 +21,7 @@ export const ButtonContainer = styled.div`
 
 export const ClueButton = styled(PrimaryButton)`
     color: var(--color-white);
-    background: var(--color-primary);
+    background: var(--color-secondary);
     margin: 0.7rem;
     //z-index: 2;
     //position: absolute;
@@ -32,7 +32,7 @@ export const ClueButton = styled(PrimaryButton)`
 `
 
 export const GuessButton = styled(ClueButton)`
-    background: var(--color-secondary);
+    background: var(--color-primary);
     text-transform: none;
     letter-spacing: 0;
     // margin-top: 0;

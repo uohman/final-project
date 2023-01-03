@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import { questions } from 'reducers/questions';
+import { game } from 'reducers/game';
 import { ui } from 'reducers/ui';
 
 // import { NavBar } from 'components/NavBar/NavBar';
@@ -16,18 +16,13 @@ import { Summary } from 'components/Summary/Summary';
 // import { NotFound } from 'components/NotFound/NotFound'
 
 const reducer = combineReducers({
+  game: game.reducer,
   ui: ui.reducer
-});
-
-const store = configureStore({ reducer });
+})
+const store = configureStore({ reducer })
 
 export const Main = () => {
   const [step, setStep] = useState(1);
-  /*   const reducer = combineReducers({
-    questions: questions.reducer,
-    ui: ui.reducer
-  })
-  const store = configureStore({ reducer }) */
 
   const handleStepChange = () => {
     setStep(step + 1);

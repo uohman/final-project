@@ -15,7 +15,7 @@ align-items: center;
 
 export const Title = styled(Paragraph)`
 font-size: 1.2rem;
-
+color: var(--color-white)
 `
 
 export const AboutButton = styled.button`

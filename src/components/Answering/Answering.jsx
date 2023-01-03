@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { fetchPlace } from 'api/index.js';
 
 import { NavBar } from 'components/NavBar/NavBar';
+import { Summary } from 'components/Summary/Summary';
 
 import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
 import { Label, Input, Span } from './Answering.Styles'
@@ -59,7 +60,7 @@ export const Answering = ({ onStepChange }) => {
                 </Span>
 
                 <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
-
+                <Summary autocompleteCities={autocompleteCities} />
               </Wrapper>
             </div>
           </form>
