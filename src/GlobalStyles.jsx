@@ -37,7 +37,7 @@ export const Heading = styled.h1`
     color: var(--color-primary);
     font-weight: 400;
     text-align: center;
-    font-size: 5.5rem;
+    font-size: 6rem;
 `
 
 export const Subheading = styled.h2`

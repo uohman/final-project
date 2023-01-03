@@ -1,5 +1,5 @@
 import React from 'react';
-
+// import { useSelector } from 'react-redux';
 import { Subheading } from 'GlobalStyles';
 
 export const Summary = (props) => {
@@ -8,6 +8,9 @@ export const Summary = (props) => {
 
   /*   const correct = props.autocompleteCities === 'Vienna, Austria'
   const wrong = props.autocompleteCities !== 'Vienna, Austria' */
+
+  /* const score = useSelector((store) => store.game.score)
+  const answer = useSelector((store) => store.game.correctAnswer) */
 
   return (
     <div>

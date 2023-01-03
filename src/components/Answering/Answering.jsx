@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlace } from 'api/index.js';
-
+// import { game } from 'reducers/game';
 import { NavBar } from 'components/NavBar/NavBar';
 import { Summary } from 'components/Summary/Summary';
 
@@ -29,12 +29,18 @@ export const Answering = ({ onStepChange }) => {
   };
 
   /// Store score in redux on submit
-  /*   const dispatch = useDispatch()
+  /* const dispatch = useDispatch()
 
   const onSubmitAnswer = (event) => {
     event.preventDefault(event);
-    dispatch(game.actions.setScore(input));
-    setInput('');
+    // get correct answer from backend
+    const correctAnswer = 'lorem ipsum set dolor amet';
+    // if answer === correct answer set score to an intended value
+    const scoreFromReduxStore = useSelector((reduxStore) => reduxStore.game.score);
+    const scoreValueThatTheUserGets = scoreFromStore + 1;
+    dispatch(game.actions.setScore(scoreValueThatTheUserGets))
+    dispatch(game.actions.setCorrectAnswer(correctAnswer));
+    // setInput('');
   }; */
 
   return (
