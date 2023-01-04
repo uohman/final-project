@@ -15,10 +15,8 @@ export const Summary = () => {
 
   return (
     <div>
-      <Subheading>Summary</Subheading>
-      {/* <p>{props.autocompleteCities}</p> */}
-      <p>We are headed to {answer}.</p>
-      <p>Your score: {score}</p>
+      <Subheading>We are headed to {answer}.</Subheading>
+      <Subheading>Your score: {score}</Subheading>
     </div>
   );
 }

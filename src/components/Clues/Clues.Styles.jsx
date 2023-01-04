@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { Span, Paragraph, PrimaryButton } from 'GlobalStyles';
 
-export const SingleClueContainer = styled.section`
+export const ClueContainer = styled.section`
     //outline: 2px solid red;
     background: rgb(64, 49, 245, 0.85);
     display: flex;

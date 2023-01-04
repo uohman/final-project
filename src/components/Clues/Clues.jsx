@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { game } from 'reducers/game';
 
 import swal from 'sweetalert';
 
 // import { Answering } from 'components/Answering/Answering'
 import { Paragraph } from 'GlobalStyles';
-import { SingleClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
+import { ClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
-  const [games, setGames] = useState([]) // Fetch clues
+  const [games, setGames] = useState([])
   const [loading, setLoading] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [level, setLevel] = useState(5);
 
+  // Fetching clues
   const fetchClues = () => {
     setLoading(true);
     fetch('https://final-project-api-veooltntuq-lz.a.run.app/games')
@@ -26,6 +28,8 @@ export const Clues = () => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }
+
+  // Setting current score
   const currentScore = useSelector((store) => store.game.score);
   const dispatch = useDispatch();
 
@@ -58,14 +62,14 @@ export const Clues = () => {
     /* return <Answering />;
   } else { */
     return (
-      <SingleClueContainer>
+      <ClueContainer>
 
         <SpecialSpan>Level: {level}</SpecialSpan>
         {/* <span>Clue {currentQuestion + 1}:</span> */}
         <ClueParagraph>{activeQuestion && activeQuestion.gameOne}</ClueParagraph>
 
         <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
-      </SingleClueContainer>
+      </ClueContainer>
     )
   }
 }

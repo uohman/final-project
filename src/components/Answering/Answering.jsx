@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,8 +18,9 @@ export const Answering = ({ onStepChange }) => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
+  const [userAnswer, setUserAnswer] = useState('');
 
-  /// Handling and fetching cities for auto complete
+  // Handling and fetching cities for auto complete
   const handleCityChange = async (e) => {
     setCity(e.target.value);
     if (!city) return;
@@ -34,11 +36,18 @@ export const Answering = ({ onStepChange }) => {
 
   const onSubmitAnswer = (event) => {
     event.preventDefault(event);
-    // get correct answer from backend
+    // Correct answer, at the moment hardcoded
     const correctAnswer = 'Vienna, Austria';
-    // if answer === correct answer set score to an intended value
+    // If answer === correct answer set score to an intended value
     const scoreFromReduxStore = useSelector((reduxStore) => reduxStore.game.score);
-    const scoreValueThatTheUserGets = scoreFromReduxStore + 1;
+    let scoreValueThatTheUserGets;
+    if (userAnswer === correctAnswer) {
+      scoreValueThatTheUserGets = scoreFromReduxStore + 1;
+      console.log('Correct answer')
+    } else {
+      scoreValueThatTheUserGets = 0;
+      console.log('Wrong answer')
+    }
     dispatch(game.actions.setScore(scoreValueThatTheUserGets))
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
   };
@@ -62,8 +71,12 @@ export const Answering = ({ onStepChange }) => {
                   type="text"
                   id="city"
                   name="city"
-                  onChange={handleCityChange}
-                  value={city}
+                  onChange={(event) => {
+                    setUserAnswer(event.target.value);
+                    handleCityChange(event);
+                  }}
+                  value={userAnswer}
+                  /* value={city} */
                   required
                   pattern={autocompleteCities.join('|')}
                   autoComplete="off" />
@@ -76,6 +89,7 @@ export const Answering = ({ onStepChange }) => {
                 *start typing and choose city from the given options
                 </Span>
                 <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
+                <Span>{userAnswer}</Span>
               </Wrapper>
             </div>
           </form>
