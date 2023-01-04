@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { fetchPlace } from 'api/index.js';
-// import { game } from 'reducers/game';
+import { game } from 'reducers/game';
+
 import { NavBar } from 'components/NavBar/NavBar';
-import { Summary } from 'components/Summary/Summary';
 
 import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
 import { Label, Input, Span } from './Answering.Styles'
@@ -28,27 +30,25 @@ export const Answering = ({ onStepChange }) => {
     res.error ? setAutocompleteErr(res.error) : setAutocompleteErr('');
   };
 
-  /// Store score in redux on submit
-  /* const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const onSubmitAnswer = (event) => {
     event.preventDefault(event);
     // get correct answer from backend
-    const correctAnswer = 'lorem ipsum set dolor amet';
+    const correctAnswer = 'Vienna, Austria';
     // if answer === correct answer set score to an intended value
     const scoreFromReduxStore = useSelector((reduxStore) => reduxStore.game.score);
-    const scoreValueThatTheUserGets = scoreFromStore + 1;
+    const scoreValueThatTheUserGets = scoreFromReduxStore + 1;
     dispatch(game.actions.setScore(scoreValueThatTheUserGets))
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
-    // setInput('');
-  }; */
+  };
 
   return (
     <div>
       <NavBar />
       <OuterWrapper>
         <InnerWrapper>
-          <form>
+          <form onSubmit={(event) => onSubmitAnswer(event)}>
             <div className="placesAutocomplete">
               <Wrapper className="placesAutocomplete__inputWrap">
                 <Label htmlFor="city" className="label">
@@ -76,7 +76,6 @@ export const Answering = ({ onStepChange }) => {
                 *start typing and choose city from the given options
                 </Span>
                 <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
-                <Summary autocompleteCities={autocompleteCities} />
               </Wrapper>
             </div>
           </form>

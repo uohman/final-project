@@ -9,7 +9,7 @@ import { ui } from 'reducers/ui';
 // import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
 // import { SingleClue } from 'components/SingleClue/SingleClue';
-import { Clues } from 'components/Clues/Clues'
+import { ClueWrapper } from 'components/ClueWrapper/ClueWrapper'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';
 // import { InnerWrapper, OuterWrapper } from 'GlobalStyles';
@@ -31,7 +31,7 @@ export const Main = () => {
   return (
     <Provider store={store}>
       {step === 1 && <StartPage onStepChange={handleStepChange} />}
-      {step === 2 && <Clues onStepChange={handleStepChange} />}
+      {step === 2 && <ClueWrapper onStepChange={handleStepChange} />}
       {step === 3 && <Answering onStepChange={handleStepChange} />}
       {step === 4 && (<Summary />)}
     </Provider>
