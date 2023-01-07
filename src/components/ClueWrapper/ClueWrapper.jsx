@@ -11,7 +11,7 @@ import { Mapillary } from 'components/Mapillary/Mapillary';
 import { MapillaryContainer, ButtonContainer, ClueButton, GuessButton } from './ClueWrapper.Styles'
 
 export const ClueWrapper = ({ onStepChange }) => {
-  const [isShown, setIsShown] = useState(false); // Show SingleClue component
+  const [isShown, setIsShown] = useState(false); // Show Clues component
   const [toggleClueButton, setToggleClueButton] = useState(true); // Show/hide CLUE button
 
   const handleClick = () => {
@@ -31,7 +31,7 @@ export const ClueWrapper = ({ onStepChange }) => {
     <div>
       <NavBar />
       <MapillaryContainer>
-        <Mapillary width="auto" height="94vh" imageId="498763468214164" />
+        {!isShown && <Mapillary width="auto" height="94vh" imageId="299161241756377" />}
       </MapillaryContainer>
       {isShown && <Clues />}
       <ButtonContainer>

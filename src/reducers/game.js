@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   correctAnswer: '',
-  score: 5
+  score: 4
 }
 
 export const game = createSlice({

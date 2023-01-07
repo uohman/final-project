@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
@@ -32,6 +31,7 @@ export const Answering = ({ onStepChange }) => {
     res.error ? setAutocompleteErr(res.error) : setAutocompleteErr('');
   };
 
+  const scoreFromReduxStore = useSelector((store) => store.game.score);
   const dispatch = useDispatch()
 
   const onSubmitAnswer = (event) => {
@@ -39,7 +39,6 @@ export const Answering = ({ onStepChange }) => {
     // Correct answer, at the moment hardcoded
     const correctAnswer = 'Vienna, Austria';
     // If answer === correct answer set score to an intended value
-    const scoreFromReduxStore = useSelector((reduxStore) => reduxStore.game.score);
     let scoreValueThatTheUserGets;
     if (userAnswer === correctAnswer) {
       scoreValueThatTheUserGets = scoreFromReduxStore + 1;
@@ -48,8 +47,9 @@ export const Answering = ({ onStepChange }) => {
       scoreValueThatTheUserGets = 0;
       console.log('Wrong answer')
     }
-    dispatch(game.actions.setScore(scoreValueThatTheUserGets))
+    dispatch(game.actions.setScore(scoreValueThatTheUserGets));
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
+    onStepChange()
   };
 
   return (
@@ -88,7 +88,7 @@ export const Answering = ({ onStepChange }) => {
                 <Span className="placesAutocomplete__hint">
                 *start typing and choose city from the given options
                 </Span>
-                <PrimaryButton type="submit" onClick={onStepChange}>Submit</PrimaryButton>
+                <PrimaryButton type="submit">Submit</PrimaryButton>
                 <Span>{userAnswer}</Span>
               </Wrapper>
             </div>
@@ -98,3 +98,47 @@ export const Answering = ({ onStepChange }) => {
     </div>
   );
 };
+
+/* export const Answering = ({ onStepChange }) => {
+  const [userAnswer, setUserAnswer] = useState('');
+
+  const onSubmitAnswer = (event) => {
+    event.preventDefault();
+    // * Correct answer, at the moment hardcoded
+    const correctAnswer = 'Vienna, Austria';
+    if (userAnswer === correctAnswer) {
+      console.log('Correct answer')
+    } else {
+      console.log('Wrong answer')
+    }
+    onStepChange()
+  };
+
+  return (
+    <form onSubmit={onSubmitAnswer}>
+      <div>
+        <h2>We are headed to:</h2>
+        <div className="select-container">
+          <select
+            className="select"
+            id="selectInput"
+            value={userAnswer}
+            onChange={(event) => {
+              setUserAnswer(event.target.value)
+            }}>
+            <option value="">The city is:</option>
+            <option value="Vienna, Austria">Vienna, Austria</option>
+            <option value="Helsinki, Finland">Helsinki, Finland</option>
+            <option value="Oslo, Norway">Oslo, Norway</option>
+          </select>
+        </div>
+      </div>
+      <div className="button-container">
+        <button type="submit" className="button">
+          Submit
+        </button>
+      </div>
+    </form>
+  );
+}; */
+

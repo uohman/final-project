@@ -1,21 +1,24 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { game } from 'reducers/game';
-
 import swal from 'sweetalert';
 
+import { Mapillary } from 'components/Mapillary/Mapillary';
 // import { Answering } from 'components/Answering/Answering'
 import { Paragraph } from 'GlobalStyles';
-import { ClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
+import { MapillaryContainer, ClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
+  /* const [nextClue, setNextClue] = useState(1) */
   const [games, setGames] = useState([])
   const [loading, setLoading] = useState(false);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [currentClue, setCurrentClue] = useState(0);
   const [level, setLevel] = useState(5);
+  const [imageId, setImageId] = useState('2978574139073965')
 
-  // Fetching clues
+  //* Fetching clues
   const fetchClues = () => {
     setLoading(true);
     fetch('https://final-project-api-veooltntuq-lz.a.run.app/games')
@@ -29,20 +32,21 @@ export const Clues = () => {
       .finally(() => setLoading(false));
   }
 
-  // Setting current score
+  //* Setting current score
   const currentScore = useSelector((store) => store.game.score);
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < 5) {
-      /* setCurrentQuestion(nextQuestion) && */ setLevel(level - 1);
+    setCurrentClue(currentClue + 1);
+    if (currentClue < 4) { //*  Show alert if clue index > 4
+      /* setCurrentClue(nextClue) && */ setLevel(level - 1);
+      if (currentClue === 1) setImageId('461631028397375')
+      if (currentClue === 2) setImageId('2978574139073965')
     } else {
       swal('Time to make a guess!', {
         button: 'OK'
       });
     }
-    setCurrentQuestion(nextQuestion);
     dispatch(game.actions.setScore(currentScore - 1));
   };
 
@@ -50,26 +54,31 @@ export const Clues = () => {
     fetchClues()
   }, [])
 
-  const activeQuestion = games[currentQuestion];
-
-  const nextQuestion = currentQuestion + 1;
+  const activeClue = games[currentClue];
+  /* const nextClue = currentClue + 1; */
 
   if (loading) {
     return <Paragraph>Loading clues...</Paragraph>
   }
 
-  if (nextQuestion < 6) {
-    /* return <Answering />;
+  if (currentClue < 5) { //* Stop showing clues after clue 5
+  /* return <Answering />;
   } else { */
     return (
-      <ClueContainer>
+      <div>
+        <MapillaryContainer>
+          {console.log(currentClue)}
+          <Mapillary width="auto" height="94vh" imageId={imageId}/* {currentClue === 0 ? '2978574139073965' : currentClue === 1 ? '461631028397375' : currentClue === 2 ? '2978574139073965' : currentClue === 3 ? '312627450377787' : currentClue === 4 ? '695710578427767' : ''} */ />
+        </MapillaryContainer>
+        <ClueContainer>
 
-        <SpecialSpan>Level: {level}</SpecialSpan>
-        {/* <span>Clue {currentQuestion + 1}:</span> */}
-        <ClueParagraph>{activeQuestion && activeQuestion.gameOne}</ClueParagraph>
+          <SpecialSpan>Level: {level}</SpecialSpan>
+          {/* <span>Clue {currentClue + 1}:</span> */}
+          <ClueParagraph>{activeClue && activeClue.gameOne}</ClueParagraph>
 
-        <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
-      </ClueContainer>
+          <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
+        </ClueContainer>
+      </div>
     )
   }
 }

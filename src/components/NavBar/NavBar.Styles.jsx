@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro'
-import { Paragraph } from 'GlobalStyles';
 
 export const NavBarContainer = styled.div`
 display: flex;
@@ -13,16 +12,16 @@ width: 100%;
 align-items: center;
 `
 
-export const Title = styled(Paragraph)`
-font-size: 1.2rem;
-color: var(--color-white)
-`
-
-export const AboutButton = styled.button`
+export const Title = styled.button`
 border: none;
 background: var(--color-primary);
 color: var(--color-white);
 font-family: var(--font-primary);
+font-size: 1.2rem;
+cursor: pointer;
+`
+
+export const AboutButton = styled(Title)`
 font-size: 1rem;
 text-transform: uppercase;
 letter-spacing: 0.1rem;

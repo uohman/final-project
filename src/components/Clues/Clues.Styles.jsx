@@ -44,3 +44,8 @@ export const AnotherClueButton = styled(PrimaryButton)`
     text-transform: none;
     letter-spacing: 0;
 `
+
+export const MapillaryContainer = styled.div`
+position: relative;
+z-index: 1;
+`
