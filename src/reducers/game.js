@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   correctAnswer: '',
+  userAnswer: '',
   score: 4
 }
 
@@ -12,6 +13,9 @@ export const game = createSlice({
   initialState,
   reducers: {
     setCorrectAnswer: (store, actions) => {
+      store.correctAnswer = actions.payload
+    },
+    setUserAnswer: (store, actions) => {
       store.correctAnswer = actions.payload
     },
     setScore: (store, actions) => {

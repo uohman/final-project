@@ -11,12 +11,11 @@ import { Paragraph } from 'GlobalStyles';
 import { MapillaryContainer, ClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
-  /* const [nextClue, setNextClue] = useState(1) */
   const [games, setGames] = useState([])
   const [loading, setLoading] = useState(false);
   const [currentClue, setCurrentClue] = useState(0);
   const [level, setLevel] = useState(5);
-  const [imageId, setImageId] = useState('2978574139073965')
+  // const [imageId, setImageId] = useState('2978574139073965')
 
   //* Fetching clues
   const fetchClues = () => {
@@ -39,9 +38,9 @@ export const Clues = () => {
   const handleClick = () => {
     setCurrentClue(currentClue + 1);
     if (currentClue < 4) { //*  Show alert if clue index > 4
-      /* setCurrentClue(nextClue) && */ setLevel(level - 1);
-      if (currentClue === 1) setImageId('461631028397375')
-      if (currentClue === 2) setImageId('2978574139073965')
+      setLevel(level - 1);
+    /*     if (currentClue === 1) setImageId('461631028397375')
+      if (currentClue === 2) setImageId('2978574139073965') */
     } else {
       swal('Time to make a guess!', {
         button: 'OK'
@@ -55,25 +54,21 @@ export const Clues = () => {
   }, [])
 
   const activeClue = games[currentClue];
-  /* const nextClue = currentClue + 1; */
 
   if (loading) {
     return <Paragraph>Loading clues...</Paragraph>
   }
 
   if (currentClue < 5) { //* Stop showing clues after clue 5
-  /* return <Answering />;
-  } else { */
     return (
       <div>
         <MapillaryContainer>
           {console.log(currentClue)}
-          <Mapillary width="auto" height="94vh" imageId={imageId}/* {currentClue === 0 ? '2978574139073965' : currentClue === 1 ? '461631028397375' : currentClue === 2 ? '2978574139073965' : currentClue === 3 ? '312627450377787' : currentClue === 4 ? '695710578427767' : ''} */ />
+          <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '2978574139073965' : currentClue === 1 ? '461631028397375' : currentClue === 2 ? '2978574139073965' : currentClue === 3 ? '312627450377787' : currentClue === 4 ? '695710578427767' : ''} />
         </MapillaryContainer>
         <ClueContainer>
 
           <SpecialSpan>Level: {level}</SpecialSpan>
-          {/* <span>Clue {currentClue + 1}:</span> */}
           <ClueParagraph>{activeClue && activeClue.gameOne}</ClueParagraph>
 
           <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>

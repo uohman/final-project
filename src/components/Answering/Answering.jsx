@@ -49,6 +49,7 @@ export const Answering = ({ onStepChange }) => {
     }
     dispatch(game.actions.setScore(scoreValueThatTheUserGets));
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
+    // dispatch(game.actions.setUserAnswer(userAnswer));
     onStepChange()
   };
 
@@ -89,7 +90,6 @@ export const Answering = ({ onStepChange }) => {
                 *start typing and choose city from the given options
                 </Span>
                 <PrimaryButton type="submit">Submit</PrimaryButton>
-                <Span>{userAnswer}</Span>
               </Wrapper>
             </div>
           </form>

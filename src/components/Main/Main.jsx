@@ -8,7 +8,6 @@ import { ui } from 'reducers/ui';
 
 // import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
-// import { SingleClue } from 'components/SingleClue/SingleClue';
 import { ClueWrapper } from 'components/ClueWrapper/ClueWrapper'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';

@@ -8,7 +8,7 @@ z-index: 1;
 
 export const SummaryContainer = styled.section`
     //outline: 2px solid red;
-    background: rgb(64, 49, 245, 0.85);
+    background: rgb(255,255,255,0.75);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,16 +16,18 @@ export const SummaryContainer = styled.section`
     padding: 2rem;
     margin-top: 3vh;
     width: 40vw;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     position: fixed;
     bottom: 7rem;
     left: 2rem;
     z-index: 2;
+    border: 1px solid var(--color-secondary);
+    box-shadow: 7px 7px var(--color-secondary);
 `
 
 export const SummaryText = styled.h2`
     font-family: var(--font-primary);
-    color: var(--color-white);
+    color: var(--color-primary);
     font-weight: 400;
     text-align: center;
     font-size: 1.5rem;
