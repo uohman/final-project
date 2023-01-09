@@ -47,6 +47,7 @@ export const Summary = () => {
         <RestartButton type="button" onClick={onRestartButton}>RESTART</RestartButton>
         <RestartButton type="button" onClick={handleClick}>Explain clues</RestartButton>
       </ButtonContainer>
+
     </div>
   );
 }

@@ -7,8 +7,8 @@ import swal from 'sweetalert';
 
 import { Mapillary } from 'components/Mapillary/Mapillary';
 // import { Answering } from 'components/Answering/Answering'
-import { Paragraph } from 'GlobalStyles';
-import { MapillaryContainer, ClueContainer, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
+import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
+import { MapillaryContainer, ClueContainer, LoadingParagraph, SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -56,7 +56,12 @@ export const Clues = () => {
   const activeClue = games[currentClue];
 
   if (loading) {
-    return <Paragraph>Loading clues...</Paragraph>
+    return (
+      <OuterWrapper>
+        <InnerWrapper>
+          <LoadingParagraph>Loading clues...</LoadingParagraph>
+        </InnerWrapper>
+      </OuterWrapper>)
   }
 
   if (currentClue < 5) { //* Stop showing clues after clue 5

@@ -15,7 +15,7 @@ export const ClueContainer = styled.section`
     /* border-radius: 15px; */
     position: fixed;
     bottom: 7rem;
-    left: 2rem;
+    right: 2rem;
     z-index: 2;
     border: 1px solid var(--color-secondary);
     box-shadow: 7px 7px var(--color-secondary);

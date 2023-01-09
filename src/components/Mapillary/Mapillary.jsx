@@ -21,6 +21,14 @@ class ViewerComponent extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.imageId !== this.props.imageId) {
+      if (this.viewer) {
+        this.viewer.moveTo(this.props.imageId);
+      }
+    }
+  }
+
   render() {
     return <div ref={this.containerRef} style={this.props.style} />;
   }

@@ -1,11 +1,18 @@
 /* eslint-disable max-len */
 import React from 'react';
 
+import { AboutHeading, AboutParagraph } from './About.Styles';
+
 export const About = () => {
   return (
     <div>
-      This is the About component
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <AboutHeading>About StreetSmart</AboutHeading>
+      <AboutParagraph>
+        StreetSmart is a quiz game where the answer should be a name of a city anywhere in the world. The score is based on which level the right answer has been given. If the answer is correct, the score will be given accordingly. If the answer is wrong, the score will be 0.
+        <br />This online game was made by Ulrika Öhman as my final project for the Technigo frontend developer bootcamp 2022/2023.
+        <br />The frontend of StreetSmart was developed in React JS and Redux. The backend was developed in Node.js using Express API and Mongoose and MongoDB for the database.
+        <br />The street views are from Mapillary.com.
+      </AboutParagraph>
     </div>
   );
 }

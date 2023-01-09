@@ -17,6 +17,7 @@ export const OuterWrapper = styled.section`
 `
 
 export const InnerWrapper = styled.section`
+    /* outline: 2px solid red; */
     width: 85vw;
     margin: 0 auto;
 

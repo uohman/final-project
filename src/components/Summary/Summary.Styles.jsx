@@ -34,14 +34,16 @@ export const SummaryText = styled.h2`
 `
 
 export const ButtonContainer = styled.div`
-    //outline: 1px solid red;
+    /* outline: 2px solid red; */
     display: flex;
     align-items: center;
     //justify-content: center;
     flex-direction: row;
+    justify-content: space-between;
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
+    /* left: 2rem; */
+    /* right: 2rem; */
     z-index: 2;
     width: 100vw;
 `
@@ -49,5 +51,5 @@ export const ButtonContainer = styled.div`
 export const RestartButton = styled(PrimaryButton)`
     color: var(--color-white);
     background: var(--color-secondary);
-    margin: 0.7rem;
+    margin: 0 2rem;
 `

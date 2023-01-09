@@ -22,6 +22,10 @@ export const ClueContainer = styled.section`
     box-shadow: 7px 7px var(--color-secondary);
 `
 
+export const LoadingParagraph = styled(Paragraph)`
+    text-align: center;
+`
+
 export const SpecialSpan = styled(Span)`
     // font-size: 1rem;
     // text-decoration: underline;
