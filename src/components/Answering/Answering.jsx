@@ -37,7 +37,7 @@ export const Answering = ({ onStepChange }) => {
   const onSubmitAnswer = (event) => {
     event.preventDefault(event);
     // Correct answer, at the moment hardcoded
-    const correctAnswer = 'Vienna, Austria';
+    const correctAnswer = 'Chicago, Illinois, United States';
     // If answer === correct answer set score to an intended value
     let scoreValueThatTheUserGets;
     if (userAnswer === correctAnswer) {

@@ -6,7 +6,7 @@ import { ClueExplanation } from 'components/ClueExplanation/ClueExplanation';
 
 import { NavBar } from 'components/NavBar/NavBar';
 // import { Subheading } from 'GlobalStyles';
-import { MapillaryContainer, SummaryContainer, SummaryText, ButtonContainer, RestartButton } from './Summary.Styles'
+import { MapillaryContainer, SummaryContainer, SummaryText, SummaryBigText, ButtonContainer, RestartButton } from './Summary.Styles'
 
 export const Summary = () => {
   const [isShown, setIsShown] = useState(false); // Show ClueExplanation component
@@ -30,7 +30,7 @@ export const Summary = () => {
     <div>
       <NavBar />
       <MapillaryContainer>
-        <Mapillary width="auto" height="94vh" imageId="625621858834998" />
+        <Mapillary width="auto" height="94vh" imageId="174038234492468" />
       </MapillaryContainer>
       <SummaryContainer>
         {/* {correctAnswer && (
@@ -39,9 +39,10 @@ export const Summary = () => {
         {wrongAnswer && (
           <SummaryText>Sorry, that is wrong. We are headed to {answer}.</SummaryText>
         )} */}
-        <SummaryText>We are headed to {answer}.</SummaryText>
-        <SummaryText>Your score: {score}</SummaryText>
+        <SummaryText>We are headed to:</SummaryText><SummaryBigText>{answer}</SummaryBigText><br />
+        <SummaryText>Your score:</SummaryText><SummaryBigText>{score}</SummaryBigText>
       </SummaryContainer>
+
       {isShown && <ClueExplanation />}
       <ButtonContainer>
         <RestartButton type="button" onClick={onRestartButton}>RESTART</RestartButton>

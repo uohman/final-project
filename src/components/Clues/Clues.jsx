@@ -69,7 +69,7 @@ export const Clues = () => {
       <div>
         <MapillaryContainer>
           {console.log(currentClue)}
-          <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '2978574139073965' : currentClue === 1 ? '461631028397375' : currentClue === 2 ? '2978574139073965' : currentClue === 3 ? '312627450377787' : currentClue === 4 ? '695710578427767' : ''} />
+          <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
         </MapillaryContainer>
         <ClueContainer>
 
