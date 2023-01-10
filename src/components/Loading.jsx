@@ -1,7 +1,16 @@
+/* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import Lottie from 'lottie-react';
 import { useSelector } from 'react-redux';
-import animationData from '../lotties/loading';
+import loadingCar from '../lotties/loading';
+
+/* export const Loading = () => {
+  return (
+    <div>
+      <Lottie animationData={loadingCar} loop={true} height={400} width={400} />
+    </div>
+  )
+}; */
 
 export const Loading = () => {
   const isLoading = useSelector((store) => store.ui.isLoading)
@@ -9,7 +18,7 @@ export const Loading = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData,
+    animationData: loadingCar,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }

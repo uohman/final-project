@@ -8,7 +8,8 @@ z-index: 1;
 
 export const SummaryContainer = styled.section`
     //outline: 2px solid red;
-    background: rgb(239,211,219,0.8);
+    /* background: rgb(239,211,219,0.8); */
+    background: rgb(239,211,219);
     display: flex;
     align-items: center;
     justify-content: center;

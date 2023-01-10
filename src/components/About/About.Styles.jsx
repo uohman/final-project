@@ -14,7 +14,7 @@ export const AboutSubheading = styled(Subheading)`
 
 export const AboutParagraph = styled(Paragraph)`
     color: var(--color-white);
-    padding-bottom: 0.75rem;
+    padding-bottom: 1rem;
     text-align: justify;
     line-height: 1.4rem;
 `

@@ -3,13 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { Mapillary } from 'components/Mapillary/Mapillary';
 import { ClueExplanation } from 'components/ClueExplanation/ClueExplanation';
-
 import { NavBar } from 'components/NavBar/NavBar';
 // import { Subheading } from 'GlobalStyles';
 import { MapillaryContainer, SummaryContainer, SummaryText, SummaryBigText, ButtonContainer, RestartButton } from './Summary.Styles'
 
 export const Summary = () => {
-  const [isShown, setIsShown] = useState(false); // Show ClueExplanation component
+  const [isShown, setIsShown] = useState(false); //* Show ClueExplanation component
 
   const answer = useSelector((store) => store.game.correctAnswer)
   // const userAnswer = useSelector((store) => store.game.userAnswer)
@@ -25,6 +24,7 @@ export const Summary = () => {
   const onRestartButton = () => {
     window.location.reload();
   }
+  const buttonText = isShown ? 'Close' : 'Explain clues'/* 'Hide clue explanation' : 'Show clue explanation' */;
 
   return (
     <div>
@@ -46,7 +46,7 @@ export const Summary = () => {
       {isShown && <ClueExplanation />}
       <ButtonContainer>
         <RestartButton type="button" onClick={onRestartButton}>RESTART</RestartButton>
-        <RestartButton type="button" onClick={handleClick}>Explain clues</RestartButton>
+        <RestartButton type="button" onClick={handleClick}>{buttonText}</RestartButton>
       </ButtonContainer>
 
     </div>

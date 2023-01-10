@@ -8,7 +8,6 @@ export const StartPage = ({ onStepChange }) => {
     <OuterWrapper>
       <InnerWrapper>
         <Wrapper>
-
           <Span>Welcome to</Span>
           <Heading>StreetSmart</Heading>
           <Subheading>Can you figure out where we are headed?</Subheading>
