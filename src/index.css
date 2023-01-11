@@ -41,9 +41,9 @@ code {
   width: 478px;
   opacity: 0;
   pointer-events: none;
-  background-color: var(--color-background);
+  background-color: var(--color-primary);
   text-align: center;
-  border-radius: 15px;
+  border-radius: 0;
 }
 
 .swal-text {
@@ -57,7 +57,7 @@ code {
   display: inline-block;
   margin: 0;
   padding: 0 10px;
-  color: var(--color-primary);
+  color: var(--color-white);
   max-width: calc(100% - 20px);
   overflow-wrap: break-word;
   box-sizing: border-box;
@@ -65,12 +65,12 @@ code {
 
 .swal-button {
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   border: none;
   box-shadow: none;
   border-radius: 50px;
   font-family: var(--font-primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.1rem;
   padding: 10px 24px;
@@ -85,3 +85,19 @@ code {
 .swal-button:focus {
   box-shadow: none;
 }
+
+.mapillary-direction-perspective {
+  display: none;
+}
+
+.mapillary-cover-button {
+  display: none;
+}
+
+.mapillary-cover-logo {
+  display: none;
+}
+
+/* .mapillary-viewer .mapillary-dom {
+  
+} */

@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { Span, Paragraph, PrimaryButton } from 'GlobalStyles';
+import { Subheading, Span, Paragraph, PrimaryButton } from 'GlobalStyles';
 
 export const ClueContainer = styled.section`
     //outline: 2px solid red;
@@ -49,8 +49,9 @@ export const SpecialSpan = styled(Span)`
     z-index: 2; */
 `
 
-export const ClueParagraph = styled(Paragraph)`
+export const ClueText = styled(Subheading)`
     color: var(--color-white);
+    /* text-align: center; */
 `
 
 export const AnotherClueButton = styled(PrimaryButton)`

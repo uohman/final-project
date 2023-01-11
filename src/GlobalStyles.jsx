@@ -47,6 +47,7 @@ export const Subheading = styled.h2`
     font-weight: 400;
     text-align: center;
     font-size: 1.5rem;
+    line-height: 1.9rem;
 `
 
 export const Span = styled.h3`
@@ -73,7 +74,7 @@ export const PrimaryButton = styled.button`
     color: var(--color-white);
     background-color: var(--color-primary);
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 1.5rem 0 1rem;
     padding: 0.6rem 2.5rem;
     text-transform: uppercase;

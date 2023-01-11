@@ -6,13 +6,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { game } from 'reducers/game';
 import { ui } from 'reducers/ui';
 
-// import { NavBar } from 'components/NavBar/NavBar';
 import { StartPage } from 'components/StartPage/StartPage'
 import { ClueWrapper } from 'components/ClueWrapper/ClueWrapper'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';
 // import { InnerWrapper, OuterWrapper } from 'GlobalStyles';
-// import { NotFound } from 'components/NotFound/NotFound'
 
 const reducer = combineReducers({
   game: game.reducer,

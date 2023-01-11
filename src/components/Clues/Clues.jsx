@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 import { Mapillary } from 'components/Mapillary/Mapillary';
 import { Loading } from 'components/Loading';
 // import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
-import { MapillaryContainer, ClueContainer, /* LoadingParagraph, */ SpecialSpan, ClueParagraph, AnotherClueButton } from './Clues.Styles'
+import { MapillaryContainer, ClueContainer, /* LoadingParagraph, */ SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -79,8 +79,8 @@ export const Clues = () => {
               <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
             <ClueContainer>
-              <SpecialSpan>Level: {level}</SpecialSpan>
-              <ClueParagraph>{activeClue && activeClue.gameOne}</ClueParagraph>
+              <SpecialSpan>{level} points</SpecialSpan>
+              <ClueText>{activeClue && activeClue.gameOne}</ClueText>
               <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
             </ClueContainer>
             </div>}

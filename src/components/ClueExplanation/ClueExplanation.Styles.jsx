@@ -1,13 +1,13 @@
 import styled from 'styled-components/macro'
 
-import { Paragraph } from 'GlobalStyles';
+import { Span, Paragraph } from 'GlobalStyles';
 
 export const ClueExplanationContainer = styled.section`
     //outline: 2px solid red;
     background: var(--color-primary);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     flex-direction: column;
     padding: 2rem;
     /* margin-top: 3vh; */
@@ -30,8 +30,14 @@ export const ClueExplanationContainer = styled.section`
     100px 100px 80px rgba(0, 0, 0, 0.07);
 `
 
+export const ClueExplanationSubheading = styled(Span)`
+    text-align: right;
+    color: var(--color-white);
+    font-size: 1.2rem;
+`
+
 export const ClueExplanationParagraph = styled(Paragraph)`
-    margin: 0.5rem 0;
+    margin: 0 1rem 1rem;
     text-align: justify;
     color: var(--color-white);
 `

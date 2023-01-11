@@ -2,9 +2,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import logo from 'assets/StreetSmart-logo-white.svg'
+import icon from 'assets/About-icon.svg'
 import { About } from 'components/About/About';
 
-import { NavBarContainer, Title, AboutButton } from './NavBar.Styles';
+import { NavBarContainer, /* ButtonContainer, Title, */ StyledButton, StyledImage/* , AboutButton */ } from './NavBar.Styles';
 
 const style = {
   position: 'absolute',
@@ -29,26 +31,29 @@ export const NavBar = () => {
   }
   return (
     <NavBarContainer>
-      <Title type="button" onClick={onRestartButton}>StreetSmart</Title>
-      <div>
-        <AboutButton type="button" onClick={handleOpen}>About</AboutButton>
-        {/* <Button onClick={handleOpen}>Open modal</Button> */}
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description">
-          <Box sx={style}>
-            <About />
-            {/*             <Typography id="modal-modal-title" variant="h6" component="h2">
+      {/* <Title type="button" onClick={onRestartButton}>StreetSmart</Title> */}
+      <StyledButton type="button" onClick={onRestartButton}>
+        <StyledImage className="logo" src={logo} width={120} alt="StreetSmart logotype" />
+      </StyledButton>
+      {/* <AboutButton type="button" onClick={handleOpen}>?</AboutButton> */}
+      <StyledButton type="button" onClick={handleOpen}>
+        <StyledImage className="icon" src={icon} width={25} height={25} alt="About icon" />
+      </StyledButton>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description">
+        <Box sx={style}>
+          <About />
+          {/*             <Typography id="modal-modal-title" variant="h6" component="h2">
               Text in a modal
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
               Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
             </Typography> */}
-          </Box>
-        </Modal>
-      </div>
+        </Box>
+      </Modal>
     </NavBarContainer>
   );
 }

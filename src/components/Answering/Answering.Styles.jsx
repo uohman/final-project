@@ -12,7 +12,7 @@ export const Input = styled.input`
     padding: 10px;
     width: 100%;
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: 1.25rem;
     text-align: center;
     margin: 1rem 0 0.5rem;
 `
