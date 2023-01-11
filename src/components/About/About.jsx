@@ -8,7 +8,7 @@ export const About = () => {
     <div>
       <AboutHeading>About StreetSmart</AboutHeading>
       <AboutParagraph>
-      StreetSmart is a quiz game where the task is to identify a destination location based on a series of clues that are revealed one after another. You only have one chance to guess the destination, so use it wisely.
+      StreetSmart is a quiz game where the task is to identify a destination location based on a series of clues that are revealed one after another. The higher the level — the higher the points. But you only have one chance to guess the destination, so use it wisely.
       </AboutParagraph>
       <AboutSubheading>Who made this?</AboutSubheading>
       <AboutParagraph>

@@ -16,7 +16,7 @@ export const ClueExplanation = () => {
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 3</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      ”…you might be able to see a musical or an opera here too.”  We are of course referring to the musical Chicago — the longest-running American musical in Broadway history — and the opera is making a reference to Chicago being the hometown of Oprah Winfrey.
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 4</ClueExplanationSubheading>
       <ClueExplanationParagraph>
@@ -24,7 +24,7 @@ export const ClueExplanation = () => {
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 5</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
+      The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
       </ClueExplanationParagraph>
       {/* <button type="button">Back</button> */}
     </ClueExplanationContainer>
