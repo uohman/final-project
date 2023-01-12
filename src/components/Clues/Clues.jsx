@@ -6,10 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { game } from 'reducers/game';
 import swal from 'sweetalert';
 import { Mapillary } from 'components/Mapillary/Mapillary';
-import { Loading } from 'components/Loading';
+import { Loading } from 'components/Loading/Loading';
 
 import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
-import { MapillaryContainer, ClueContainer, LoadingParagraph, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
+import { MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -59,7 +59,7 @@ if (loading) {
     return (
       <OuterWrapper>
         <InnerWrapper>
-          <LoadingParagraph>Loading clues...</LoadingParagraph>
+          {/* <LoadingParagraph>Loading clues...</LoadingParagraph> */}
           <Loading />
         </InnerWrapper>
       </OuterWrapper>)

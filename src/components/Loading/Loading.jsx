@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import Lottie from 'lottie-react';
-import loadingCar from '../lotties/loading';
+import loadingCar from 'lotties/loading';
 
 export const Loading = () => {
   return (
     <div>
-      <Lottie animationData={loadingCar} loop={true} height={400} width={400} />
+      <Lottie animationData={loadingCar} loop={true} />
     </div>
+
   )
 };

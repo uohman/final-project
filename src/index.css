@@ -86,18 +86,13 @@ code {
   box-shadow: none;
 }
 
-.mapillary-direction-perspective {
+.mapillary-direction-perspective, 
+.mapillary-cover-button, 
+.mapillary-cover-logo, 
+.mapillary-attribution-container, 
+.mapillary-bearing-indicator-container,
+.mapillary-zoom-container,
+.mapillary-sequence-stepper,
+.mapillary-sequence-controls {
   display: none;
 }
-
-.mapillary-cover-button {
-  display: none;
-}
-
-.mapillary-cover-logo {
-  display: none;
-}
-
-/* .mapillary-viewer .mapillary-dom {
-  
-} */

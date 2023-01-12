@@ -8,23 +8,23 @@ export const ClueExplanation = () => {
     <ClueExplanationContainer>
       <ClueExplanationSubheading>Clue 1</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      “Day or night, you can always drive here with your shades on. Just be careful not to get pulled over.” Cult classic The Blues Brothers (1980) was set in Chicago and brothers Jake and Elwood famously wore sunglasses at night while evading authorities.
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 2</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      “The first skyscraper in the world was built here in 1885. Don’t be green with envy if you don’t know the answer just yet.” The skyscraper was the Home Insurance Building, standing 138 feet or 42 meters tall. The Chicago River is dyed green every year on St. Patrick’s Day.
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 3</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-      ”…you might be able to see a musical or an opera here too.”  We are of course referring to the musical Chicago — the longest-running American musical in Broadway history — and the opera is making a reference to Chicago being the hometown of Oprah Winfrey.
+      “Even though this place is mainly known for its sports teams, you might be able to see a musical or an opera here too.” We are of course referring to the musical Chicago — the longest-running American musical in Broadway history. And while there is an Opera Theater in Chicago we were mainly thinking of the Oprah Winfrey Show which was shot in Chicago. “Over here you’ll find one of the busiest airports in North America.” Over here, O’Hare. See what we did there? With over 200 non-stop destinations O’Hare Airport in Chicago is considered the world’s most connected airport.
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 4</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+      “We’re almost home in the third largest city in the US. Home, sweet home... No, we’re not in Alabama.” Sweet Home Chicago is a blues classic from the 1930s that even Barack Obama sang once at the White House.
       </ClueExplanationParagraph>
       <ClueExplanationSubheading>Clue 5</ClueExplanationSubheading>
       <ClueExplanationParagraph>
-      The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
+      “Is it hard to stay chic in this windy city? Yes, but we’ll have a go at it.” The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
       </ClueExplanationParagraph>
       {/* <button type="button">Back</button> */}
     </ClueExplanationContainer>

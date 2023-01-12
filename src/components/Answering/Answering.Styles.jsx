@@ -10,9 +10,9 @@ export const Input = styled.input`
     background-color: var(--color-white);
     outline-color: var(--color-primary);
     padding: 10px;
-    width: 100%;
+    width: 50vw;
     font-family: var(--font-primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: center;
     margin: 1rem 0 0.5rem;
 `
