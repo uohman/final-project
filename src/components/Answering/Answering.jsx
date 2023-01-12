@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { fetchPlace } from 'api/index.js';
 import { game } from 'reducers/game';
-
 import { NavBar } from 'components/NavBar/NavBar';
 
 import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
@@ -14,7 +12,6 @@ export const Answering = ({ onStepChange }) => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
-  // const [userAnswer, setUserAnswer] = useState('');
 
   //* Handling and fetching cities for auto complete
   const handleCityChange = async (e) => {
@@ -49,7 +46,6 @@ export const Answering = ({ onStepChange }) => {
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
     dispatch(game.actions.setUserAnswer(userAnswer));
     onStepChange();
-    console.log(userAnswer);
   };
 
   return (
@@ -72,7 +68,6 @@ export const Answering = ({ onStepChange }) => {
                   id="city"
                   name="city"
                   onChange={(event) => {
-                    // setUserAnswer(event.target.value);
                     handleCityChange(event);
                   }}
                   value={city}

@@ -29,10 +29,10 @@ export const NavBar = () => {
   return (
     <NavBarContainer>
       <StyledButton type="button" onClick={onRestartButton}>
-        <StyledImage className="logo" src={logo} width={120} alt="StreetSmart logotype" />
+        <StyledImage className="logo" src={logo} width={132} alt="StreetSmart logotype" />
       </StyledButton>
       <StyledButton type="button" onClick={handleOpen}>
-        <StyledImage className="icon" src={icon} width={25} height={25} alt="About icon" />
+        <StyledImage className="icon" src={icon} width={25} alt="About icon" />
       </StyledButton>
       <Modal
         open={open}

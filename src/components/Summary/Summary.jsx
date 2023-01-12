@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -11,7 +10,6 @@ export const Summary = () => {
   const [isShown, setIsShown] = useState(false); //* Show ClueExplanation component
 
   const answer = useSelector((store) => store.game.correctAnswer)
-  // const userAnswer = useSelector((store) => store.game.userAnswer)
   const score = useSelector((store) => store.game.score)
 
   const correctAnswer = useSelector((store) => store.game.userAnswer) === answer
@@ -49,8 +47,6 @@ export const Summary = () => {
             <SummaryBigText>{score}</SummaryBigText>
           </div>
         )}
-        {/* <SummaryText>We are headed to:</SummaryText><SummaryBigText>{answer}</SummaryBigText><br />
-        <SummaryText>Your score:</SummaryText><SummaryBigText>{score}</SummaryBigText> */}
       </SummaryContainer>
 
       {isShown && <ClueExplanation />}
