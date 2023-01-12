@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// import { ui } from './ui';
-
 const initialState = {
   correctAnswer: '',
   userAnswer: '',

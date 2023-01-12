@@ -2,10 +2,7 @@ import styled from 'styled-components/macro'
 import { Subheading, Span, Paragraph, PrimaryButton } from 'GlobalStyles';
 
 export const ClueContainer = styled.section`
-    //outline: 2px solid red;
     background: rgb(64, 49, 245, 0.5);
-    /* background: rgb(239,211,219,0.8); */
-    /* background: rgb(255,255,255,0.75); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +10,6 @@ export const ClueContainer = styled.section`
     padding: 2rem;
     margin-top: 3vh;
     width: 40vw;
-    /* border-radius: 15px; */
     position: fixed;
     bottom: 7rem;
     left: 2rem;
@@ -25,8 +21,6 @@ export const ClueContainer = styled.section`
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
     41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
     100px 100px 80px rgba(0, 0, 0, 0.07);
- /*    border: 1px solid var(--color-secondary);
-    box-shadow: 7px 7px var(--color-secondary); */
 `
 
 export const LoadingParagraph = styled(Paragraph)`
@@ -34,8 +28,6 @@ export const LoadingParagraph = styled(Paragraph)`
 `
 
 export const SpecialSpan = styled(Span)`
-    // font-size: 1rem;
-    // text-decoration: underline;
     color: var(--color-white);
     border-bottom: 4px solid var(--color-white);
     font-size: 2rem;
@@ -43,15 +35,10 @@ export const SpecialSpan = styled(Span)`
     text-transform: none;
     letter-spacing: 0;
     text-align: left;
-/*  position: fixed;
-    top: 5rem;
-    right: 2rem;
-    z-index: 2; */
 `
 
 export const ClueText = styled(Subheading)`
     color: var(--color-white);
-    /* text-align: center; */
 `
 
 export const AnotherClueButton = styled(PrimaryButton)`
@@ -62,7 +49,6 @@ export const AnotherClueButton = styled(PrimaryButton)`
     letter-spacing: 0;
 
     :hover {
-        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
         color: var(--color-white);
     }
 `

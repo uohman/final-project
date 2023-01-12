@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-
-// import { game } from 'reducers/game';
 
 import { NavBar } from 'components/NavBar/NavBar';
 import { Clues } from 'components/Clues/Clues';
@@ -10,21 +7,13 @@ import { Mapillary } from 'components/Mapillary/Mapillary';
 import { MapillaryContainer, ButtonContainer, ClueButton, GuessButton } from './ClueWrapper.Styles'
 
 export const ClueWrapper = ({ onStepChange }) => {
-  const [isShown, setIsShown] = useState(false); // Show Clues component
-  const [toggleClueButton, setToggleClueButton] = useState(true); // Show/hide CLUE button
+  const [isShown, setIsShown] = useState(false); //* Show/hide Clues or Mapillary components
+  const [toggleClueButton, setToggleClueButton] = useState(true); //* Show/hide CLUE button
 
   const handleClick = () => {
     setIsShown((current) => !current);
     setToggleClueButton(!toggleClueButton);
   };
-
-  /*   const currentScore = useSelector((store) => store.game.score);
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    setIsShown((current) => !current);
-    setToggleClueButton(!toggleClueButton);
-    dispatch(game.actions.setScore(currentScore - 1));
-  }; */
 
   return (
     <div>

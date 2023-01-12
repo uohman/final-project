@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { game } from 'reducers/game';
-import { ui } from 'reducers/ui';
 
 import { StartPage } from 'components/StartPage/StartPage'
 import { ClueWrapper } from 'components/ClueWrapper/ClueWrapper'
 import { Answering } from 'components/Answering/Answering'
 import { Summary } from 'components/Summary/Summary';
-// import { InnerWrapper, OuterWrapper } from 'GlobalStyles';
 
 const reducer = combineReducers({
-  game: game.reducer,
-  ui: ui.reducer
+  game: game.reducer
 })
 const store = configureStore({ reducer })
 

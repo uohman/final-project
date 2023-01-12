@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { Mapillary } from 'components/Mapillary/Mapillary';
 import { ClueExplanation } from 'components/ClueExplanation/ClueExplanation';
 import { NavBar } from 'components/NavBar/NavBar';
-// import { Subheading } from 'GlobalStyles';
 import { MapillaryContainer, SummaryContainer, SummaryText, SummaryBigText, ButtonContainer, RestartButton } from './Summary.Styles'
 
 export const Summary = () => {

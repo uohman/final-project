@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable max-len */
 /* eslint-disable indent */
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
@@ -36,7 +38,10 @@ export const Clues = () => {
   const currentScore = useSelector((store) => store.game.score);
   const dispatch = useDispatch();
 
+  const ref = React.useRef(null);
+
   const handleClick = () => {
+    console.log(ref.current);
     setCurrentClue(currentClue + 1);
     if (currentClue < 4) {
       dispatch(game.actions.setScore(currentScore - 1)); //* If clue index < 4 = Set score to -1
@@ -59,7 +64,6 @@ if (loading) {
     return (
       <OuterWrapper>
         <InnerWrapper>
-          {/* <LoadingParagraph>Loading clues...</LoadingParagraph> */}
           <Loading />
         </InnerWrapper>
       </OuterWrapper>)

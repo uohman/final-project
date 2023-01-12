@@ -26,7 +26,6 @@ export const ClueExplanation = () => {
       <ClueExplanationParagraph>
       “Is it hard to stay chic in this windy city? Yes, but we’ll have a go at it.” The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
       </ClueExplanationParagraph>
-      {/* <button type="button">Back</button> */}
     </ClueExplanationContainer>
   );
 }

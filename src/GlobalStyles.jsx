@@ -17,7 +17,6 @@ export const OuterWrapper = styled.section`
 `
 
 export const InnerWrapper = styled.section`
-    /* outline: 2px solid red; */
     width: 85vw;
     margin: 0 auto;
 
@@ -67,7 +66,6 @@ export const Paragraph = styled.p`
     text-align: left;
     font-size: 1rem;
     line-height: 1.5rem;
-    // padding: 10px 0;    
 `
 
 export const PrimaryButton = styled.button`
@@ -80,12 +78,9 @@ export const PrimaryButton = styled.button`
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     border-style: none;
-    // border: 4px solid var(--color-black);
     border-radius: 50px;
-    /* width: 400px; */
 
     :hover {
-        // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
         color: var(--color-white);
         transform: scale(1.1);
     }

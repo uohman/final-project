@@ -3,24 +3,19 @@ import styled from 'styled-components/macro'
 import { Span, Paragraph } from 'GlobalStyles';
 
 export const ClueExplanationContainer = styled.section`
-    //outline: 2px solid red;
     background: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: left;
     flex-direction: column;
     padding: 2rem;
-    /* margin-top: 3vh; */
     width: 40vw;
     height: 70vh;
-    /* border-radius: 15px; */
     position: fixed;
     bottom: 7rem;
     right: 2rem;
     z-index: 2;
     overflow: auto;
-    /* border: 4px solid var(--color-secondary); */
-    /* box-shadow: 7px 7px var(--color-secondary); */
     box-shadow:
     2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
     6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
