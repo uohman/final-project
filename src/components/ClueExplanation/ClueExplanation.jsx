@@ -22,7 +22,7 @@ export const ClueExplanation = () => {
       <ClueExplanationParagraph>
       “We’re almost home in the third largest city in the US. Home, sweet home... No, we’re not in Alabama.” Sweet Home Chicago is a blues classic from the 1930s that even Barack Obama sang once at the White House.
       </ClueExplanationParagraph>
-      <ClueExplanationSubheading>1 points</ClueExplanationSubheading>
+      <ClueExplanationSubheading>1 point</ClueExplanationSubheading>
       <ClueExplanationParagraph>
       “Is it hard to stay chic in this windy city? Yes, but we’ll have a go at it.” The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
       </ClueExplanationParagraph>

@@ -12,8 +12,7 @@ export const SummaryContainer = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem;
-    margin-top: 3vh;
+    padding: 2.5rem;
     width: 40vw;
     position: fixed;
     bottom: 7rem;

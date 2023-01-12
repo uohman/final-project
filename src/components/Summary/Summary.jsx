@@ -33,7 +33,7 @@ export const Summary = () => {
       <SummaryContainer>
         {correctAnswer && (
           <div>
-            <SummaryText>That is right! We are headed to:</SummaryText>
+            <SummaryText>That’s right! We are headed to:</SummaryText>
             <SummaryBigText>{answer}</SummaryBigText><br />
             <SummaryText>Your score:</SummaryText>
             <SummaryBigText>{score}</SummaryBigText>
@@ -41,7 +41,7 @@ export const Summary = () => {
         )}
         {wrongAnswer && (
           <div>
-            <SummaryText>Sorry, that is wrong. We are headed to:</SummaryText>
+            <SummaryText>Sorry, that’s wrong. We are headed to:</SummaryText>
             <SummaryBigText>{answer}</SummaryBigText><br />
             <SummaryText>Your score:</SummaryText>
             <SummaryBigText>{score}</SummaryBigText>
