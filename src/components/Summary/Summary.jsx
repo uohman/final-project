@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -13,8 +14,8 @@ export const Summary = () => {
   // const userAnswer = useSelector((store) => store.game.userAnswer)
   const score = useSelector((store) => store.game.score)
 
-  // const correctAnswer = useSelector((store) => store.game.userAnswer) === answer
-  // const wrongAnswer = useSelector((store) => store.game.userAnswer) !== answer
+  const correctAnswer = useSelector((store) => store.game.userAnswer) === answer
+  const wrongAnswer = useSelector((store) => store.game.userAnswer) !== answer
 
   const handleClick = () => {
     setIsShown((current) => !current);
@@ -23,7 +24,7 @@ export const Summary = () => {
   const onRestartButton = () => {
     window.location.reload();
   }
-  const buttonText = isShown ? 'Close' : 'Explain clues'/* 'Hide clue explanation' : 'Show clue explanation' */;
+  const buttonText = isShown ? 'Close' : 'Explain clues'
 
   return (
     <div>
@@ -32,14 +33,24 @@ export const Summary = () => {
         <Mapillary width="auto" height="94vh" imageId="174038234492468" />
       </MapillaryContainer>
       <SummaryContainer>
-        {/* {correctAnswer && (
-          <SummaryText>That is right! We are headed to {answer}.</SummaryText>
+        {correctAnswer && (
+          <div>
+            <SummaryText>That is right! We are headed to:</SummaryText>
+            <SummaryBigText>{answer}</SummaryBigText><br />
+            <SummaryText>Your score:</SummaryText>
+            <SummaryBigText>{score}</SummaryBigText>
+          </div>
         )}
         {wrongAnswer && (
-          <SummaryText>Sorry, that is wrong. We are headed to {answer}.</SummaryText>
-        )} */}
-        <SummaryText>We are headed to:</SummaryText><SummaryBigText>{answer}</SummaryBigText><br />
-        <SummaryText>Your score:</SummaryText><SummaryBigText>{score}</SummaryBigText>
+          <div>
+            <SummaryText>Sorry, that is wrong. We are headed to:</SummaryText>
+            <SummaryBigText>{answer}</SummaryBigText><br />
+            <SummaryText>Your score:</SummaryText>
+            <SummaryBigText>{score}</SummaryBigText>
+          </div>
+        )}
+        {/* <SummaryText>We are headed to:</SummaryText><SummaryBigText>{answer}</SummaryBigText><br />
+        <SummaryText>Your score:</SummaryText><SummaryBigText>{score}</SummaryBigText> */}
       </SummaryContainer>
 
       {isShown && <ClueExplanation />}

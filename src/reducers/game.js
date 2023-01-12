@@ -14,7 +14,7 @@ export const game = createSlice({
       store.correctAnswer = actions.payload
     },
     setUserAnswer: (store, actions) => {
-      store.correctAnswer = actions.payload
+      store.userAnswer = actions.payload
     },
     setScore: (store, actions) => {
       store.score = actions.payload

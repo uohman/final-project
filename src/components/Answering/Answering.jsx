@@ -14,7 +14,7 @@ export const Answering = ({ onStepChange }) => {
   const [city, setCity] = useState('');
   const [autocompleteCities, setAutocompleteCities] = useState([]);
   const [autocompleteErr, setAutocompleteErr] = useState('');
-  const [userAnswer, setUserAnswer] = useState('');
+  // const [userAnswer, setUserAnswer] = useState('');
 
   //* Handling and fetching cities for auto complete
   const handleCityChange = async (e) => {
@@ -35,6 +35,7 @@ export const Answering = ({ onStepChange }) => {
     event.preventDefault(event);
     //* Correct answer, at the moment hardcoded
     const correctAnswer = 'Chicago, Illinois, United States';
+    const userAnswer = city
     //* If answer === correct answer set score to an intended value
     let scoreValueThatTheUserGets;
     if (userAnswer === correctAnswer) {
@@ -46,7 +47,9 @@ export const Answering = ({ onStepChange }) => {
     }
     dispatch(game.actions.setScore(scoreValueThatTheUserGets));
     dispatch(game.actions.setCorrectAnswer(correctAnswer));
-    onStepChange()
+    dispatch(game.actions.setUserAnswer(userAnswer));
+    onStepChange();
+    console.log(userAnswer);
   };
 
   return (
@@ -69,10 +72,10 @@ export const Answering = ({ onStepChange }) => {
                   id="city"
                   name="city"
                   onChange={(event) => {
-                    setUserAnswer(event.target.value);
+                    // setUserAnswer(event.target.value);
                     handleCityChange(event);
                   }}
-                  value={userAnswer}
+                  value={city}
                   required
                   pattern={autocompleteCities.join('|')}
                   autoComplete="off" />
