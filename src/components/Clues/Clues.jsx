@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable indent */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { game } from 'reducers/game';
@@ -38,7 +38,7 @@ export const Clues = () => {
   const currentScore = useSelector((store) => store.game.score);
   const dispatch = useDispatch();
 
-  const ref = React.useRef(null);
+  const ref = useRef(null)
 
   const handleClick = () => {
     console.log(ref.current);
@@ -56,7 +56,10 @@ export const Clues = () => {
 
   useEffect(() => {
     fetchClues()
-  }, [])
+    if (ref.current) {
+      ref.current.click();
+  }
+  }, [ref])
 
   const activeClue = games[currentClue];
 
@@ -74,7 +77,7 @@ if (loading) {
       <div>
             <MapillaryContainer>
               {console.log(currentClue)}
-              <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
+              <Mapillary innerRef={ref} width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
             <ClueContainer>
               <SpecialSpan>{level} points</SpecialSpan>

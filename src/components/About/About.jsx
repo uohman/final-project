@@ -12,7 +12,7 @@ export const About = () => {
       </AboutParagraph>
       <AboutSubheading>Who made this?</AboutSubheading>
       <AboutParagraph>
-        This online game was made by me, <Link href="https://www.ulrikaohman.com/" target="_blank" rel="noreferrer">Ulrika Öhman</Link>, as my final project for the Technigo frontend developer bootcamp 2022/2023.
+        This online game was made by me, <Link href="https://www.ulrikaohman.com/" target="_blank" rel="noreferrer">Ulrika Öhman</Link>, as my final project for the Technigo web development boot camp 2022/2023.
       </AboutParagraph>
       <AboutParagraph>
         The frontend of StreetSmart is developed with React, Redux and styled-components. The backend with Node.js (Express/Mongoose) and MongoDB.
