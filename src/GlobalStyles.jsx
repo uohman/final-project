@@ -47,6 +47,11 @@ export const Subheading = styled.h2`
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.9rem;
+
+    /* @media (max-width: 767.98px) {
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+    } */
 `
 
 export const Span = styled.h3`

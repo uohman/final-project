@@ -2,8 +2,8 @@ import styled from 'styled-components/macro'
 import { PrimaryButton } from 'GlobalStyles';
 
 export const MapillaryContainer = styled.div`
-position: relative;
-z-index: 1;
+    position: relative;
+    z-index: 1;
 `
 
 export const ButtonContainer = styled.div`
@@ -15,6 +15,11 @@ export const ButtonContainer = styled.div`
     left: 2rem;
     z-index: 2;
     width: 100vw;
+
+    @media (max-width: 767.98px) {
+        flex-direction: column;
+        left: 0;
+    }
 `
 
 export const ClueButton = styled(PrimaryButton)`

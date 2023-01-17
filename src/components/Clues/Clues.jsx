@@ -11,7 +11,7 @@ import { Mapillary } from 'components/Mapillary/Mapillary';
 import { Loading } from 'components/Loading/Loading';
 
 import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
-import { MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
+import { ClueWrapper, MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -54,12 +54,15 @@ export const Clues = () => {
     }
   };
 
+  const mapillaryRef = document.querySelectorAll('.mapillary-cover-background');
+  console.log(mapillaryRef)
+
   useEffect(() => {
     fetchClues()
-    if (ref.current) {
+    /* if (ref.current) {
       ref.current.click();
-  }
-  }, [ref])
+  } */
+  }, [/* ref */])
 
   const activeClue = games[currentClue];
 
@@ -77,13 +80,15 @@ if (loading) {
       <div>
             <MapillaryContainer>
               {console.log(currentClue)}
-              <Mapillary innerRef={ref} width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
+              <Mapillary ref={ref} width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
-            <ClueContainer>
-              <SpecialSpan>{level} points</SpecialSpan>
-              <ClueText>{activeClue && activeClue.gameOne}</ClueText>
-              <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
-            </ClueContainer>
+            <ClueWrapper>
+              <ClueContainer>
+                <SpecialSpan>{level} points</SpecialSpan>
+                <ClueText>{activeClue && activeClue.gameOne}</ClueText>
+                <AnotherClueButton type="button" onClick={() => handleClick()}>I need another clue</AnotherClueButton>
+              </ClueContainer>
+            </ClueWrapper>
       </div>
     )
   } else {

@@ -2,6 +2,14 @@ import styled from 'styled-components/macro'
 
 import { Span, Paragraph } from 'GlobalStyles';
 
+export const ClueExplanationWrapper = styled.div`
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+`
+
 export const ClueExplanationContainer = styled.section`
     background: var(--color-primary);
     display: flex;
@@ -11,8 +19,9 @@ export const ClueExplanationContainer = styled.section`
     padding: 2rem;
     width: 40vw;
     height: 70vh;
+    margin: 3vh 0;
     position: fixed;
-    bottom: 7rem;
+    bottom: 6rem;
     right: 2rem;
     z-index: 2;
     overflow: auto;
@@ -23,6 +32,15 @@ export const ClueExplanationContainer = styled.section`
     22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
     41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
     100px 100px 80px rgba(0, 0, 0, 0.07);
+
+    @media (max-width: 767.98px) {
+        width: 80vw;
+        height: 60vh;
+        bottom: 11rem;
+        right: unset;
+        padding: 1rem;
+        margin: 0 auto;
+    }
 `
 
 export const ClueExplanationSubheading = styled(Span)`
