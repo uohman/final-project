@@ -47,7 +47,6 @@ export const Subheading = styled.h2`
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.9rem;
-    /* padding: 0 1rem;  */
 
     /* @media (max-width: 767.98px) {
         font-size: 1.3rem;
@@ -78,6 +77,7 @@ export const PrimaryButton = styled.button`
     color: var(--color-white);
     background-color: var(--color-primary);
     font-family: var(--font-primary);
+    font-weight: 400;
     font-size: 1.2rem;
     margin: 1rem 0 0;
     padding: 0.6rem 2.5rem;
