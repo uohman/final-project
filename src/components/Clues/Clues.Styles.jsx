@@ -16,7 +16,6 @@ export const ClueContainer = styled.section`
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    /* margin: 3vh 0; */
     width: 40vw;
     position: fixed;
     bottom: 6rem;

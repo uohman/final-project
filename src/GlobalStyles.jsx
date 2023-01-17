@@ -70,7 +70,12 @@ export const Paragraph = styled.p`
     font-weight: 400;
     text-align: left;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.4rem;
+
+    @media (min-width: 1400px) {
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
 `
 
 export const PrimaryButton = styled.button`

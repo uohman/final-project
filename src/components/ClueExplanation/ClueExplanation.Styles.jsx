@@ -19,7 +19,6 @@ export const ClueExplanationContainer = styled.section`
     padding: 2rem;
     width: 40vw;
     height: 70vh;
-    margin: 3vh 0;
     position: fixed;
     bottom: 6rem;
     right: 2rem;
@@ -40,6 +39,10 @@ export const ClueExplanationContainer = styled.section`
         right: unset;
         padding: 1rem;
         margin: 0 auto;
+    }
+
+    @media (min-width: 1400px) {
+        height: 50vh;
     }
 `
 
