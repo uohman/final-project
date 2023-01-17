@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable indent */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { game } from 'reducers/game';
@@ -38,10 +38,7 @@ export const Clues = () => {
   const currentScore = useSelector((store) => store.game.score);
   const dispatch = useDispatch();
 
-  const ref = useRef(null)
-
   const handleClick = () => {
-    console.log(ref.current);
     setCurrentClue(currentClue + 1);
     if (currentClue < 4) {
       dispatch(game.actions.setScore(currentScore - 1)); //* If clue index < 4 = Set score to -1
@@ -54,15 +51,9 @@ export const Clues = () => {
     }
   };
 
-  const mapillaryRef = document.querySelectorAll('.mapillary-cover-background');
-  console.log(mapillaryRef)
-
   useEffect(() => {
     fetchClues()
-    /* if (ref.current) {
-      ref.current.click();
-  } */
-  }, [/* ref */])
+  }, [])
 
   const activeClue = games[currentClue];
 
@@ -80,7 +71,7 @@ if (loading) {
       <div>
             <MapillaryContainer>
               {console.log(currentClue)}
-              <Mapillary ref={ref} width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
+              <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
             <ClueWrapper>
               <ClueContainer>
