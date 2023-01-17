@@ -16,7 +16,7 @@ export const ClueContainer = styled.section`
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    margin: 3vh 0;
+    /* margin: 3vh 0; */
     width: 40vw;
     position: fixed;
     bottom: 6rem;
@@ -32,7 +32,7 @@ export const ClueContainer = styled.section`
 
     @media (max-width: 767.98px) {
         width: 80vw;
-        bottom: 7rem;
+        bottom: 6rem;
         left: unset;
         padding: 1rem;
         margin: 0 auto;
@@ -68,17 +68,16 @@ export const AnotherClueButton = styled(PrimaryButton)`
     color: var(--color-white);
     text-transform: none;
     letter-spacing: 0;
+    margin: 1.5rem 0 0;
 
     :hover {
         color: var(--color-white);
     }
-`
 
-/* const Foo = forwardRef(({ className, width }, ref) => (
-  <div className={className} ref={ref}>
-      hello foo {width}
-  </div>
-)); */
+    /* @media (max-width: 767.98px) {
+        margin: 1.5rem 0 0;
+    } */
+`
 
 export const MapillaryContainer = styled.div`
     position: relative;

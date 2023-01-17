@@ -22,7 +22,7 @@ export const SummaryContainer = styled.section`
     flex-direction: column;
     padding: 2.5rem;
     width: 40vw;
-    margin: 3vh 0;
+    /* margin: 3vh 0; */
     position: fixed;
     bottom: 6rem;
     left: 2rem;
@@ -37,7 +37,7 @@ export const SummaryContainer = styled.section`
 
     @media (max-width: 767.98px) {
         width: 80vw;
-        bottom: 11rem;
+        bottom: 10rem;
         left: unset;
         padding: 1rem;
         margin: 0 auto;
@@ -75,9 +75,9 @@ export const ButtonContainer = styled.div`
 export const RestartButton = styled(PrimaryButton)`
     color: var(--color-white);
     background: var(--color-secondary);
-    margin: 0 2rem;
+    margin: 1rem 2rem 0;
 
     @media (max-width: 767.98px) {
-        margin: 0.7rem;
+        /* margin: 0.7rem; */
     }
 `

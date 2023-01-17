@@ -15,17 +15,18 @@ export const ButtonContainer = styled.div`
     left: 2rem;
     z-index: 2;
     width: 100vw;
+    gap: 1.7vw;
 
     @media (max-width: 767.98px) {
         flex-direction: column;
         left: 0;
+        gap: 0vw;
     }
 `
 
 export const ClueButton = styled(PrimaryButton)`
     color: var(--color-white);
     background: var(--color-secondary);
-    margin: 0.7rem;
 `
 
 export const GuessButton = styled(ClueButton)`

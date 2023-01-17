@@ -25,7 +25,7 @@ export const ClueExplanation = () => {
         </ClueExplanationParagraph>
         <ClueExplanationSubheading>1 point</ClueExplanationSubheading>
         <ClueExplanationParagraph>
-      “Is it hard to stay chic in this windy city? Yes, but we’ll have a go at it.” The city of Chicago has been known by many nicknames, but it is most widely recognized as the ”Windy City”.
+      “Is it hard to stay chic in this windy city? Yes, but we’ll have a go at it.” The city of Chicago has been known by many nicknames, but it is most widely recognized as the “Windy City”.
         </ClueExplanationParagraph>
       </ClueExplanationContainer>
     </ClueExplanationWrapper>
