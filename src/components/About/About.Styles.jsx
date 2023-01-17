@@ -14,7 +14,11 @@ export const AboutParagraph = styled(Paragraph)`
     color: var(--color-white);
     padding-bottom: 1rem;
     text-align: justify;
-    /* line-height: 1.4rem; */
+    
+    @media (min-width: 1400px) {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
 `
 
 export const Link = styled.a`

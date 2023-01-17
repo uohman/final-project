@@ -37,7 +37,8 @@ export const SummaryContainer = styled.section`
 
     @media (max-width: 767.98px) {
         width: 80vw;
-        bottom: 10rem;
+        top: 5rem;
+        bottom: unset;
         left: unset;
         padding: 1rem;
         margin: 0 auto;
@@ -50,10 +51,12 @@ export const SummaryText = styled.h2`
     font-weight: 400;
     text-align: center;
     font-size: 1.5rem;
+    line-height: 1.8rem;
 `
 
 export const SummaryBigText = styled(SummaryText)`
     font-size: 2rem;
+    line-height: 2.4rem;
 `
 
 export const ButtonContainer = styled.div`

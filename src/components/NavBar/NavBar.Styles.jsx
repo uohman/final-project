@@ -27,4 +27,5 @@ export const StyledButton = styled.button`
 export const StyledImage = styled.img`
     display: flex;
     align-items: center;
+    height: 3.5vh;
 `

@@ -48,10 +48,10 @@ export const Subheading = styled.h2`
     font-size: 1.5rem;
     line-height: 1.9rem;
 
-    /* @media (max-width: 767.98px) {
-        font-size: 1.3rem;
-        line-height: 1.4rem;
-    } */
+    @media (max-width: 767.98px) {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
 `
 
 export const Span = styled.h3`
@@ -71,11 +71,6 @@ export const Paragraph = styled.p`
     text-align: left;
     font-size: 1rem;
     line-height: 1.4rem;
-
-    @media (min-width: 1400px) {
-        font-size: 2rem;
-        line-height: 2.4rem;
-    }
 `
 
 export const PrimaryButton = styled.button`

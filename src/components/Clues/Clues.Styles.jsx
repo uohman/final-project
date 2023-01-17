@@ -31,7 +31,8 @@ export const ClueContainer = styled.section`
 
     @media (max-width: 767.98px) {
         width: 80vw;
-        bottom: 6rem;
+        top: 5rem;
+        bottom: unset;
         left: unset;
         padding: 1rem;
         margin: 0 auto;
@@ -50,14 +51,18 @@ export const SpecialSpan = styled(Span)`
     text-transform: none;
     letter-spacing: 0;
     text-align: left;
+
+    @media (max-width: 767.98px) {
+        font-size: 1.5rem;
+    }
 `
 
 export const ClueText = styled(Subheading)`
     color: var(--color-white);
 
     @media (max-width: 767.98px) {
-        font-size: 1.3rem;
-        line-height: 1.7rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
     }
 `
 

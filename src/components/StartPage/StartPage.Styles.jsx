@@ -11,8 +11,9 @@ width: 50vw;
 `
 
 export const StartPageSubheading = styled(Subheading)`
+
 @media (max-width: 767.98px) {
-    margin: 0 8vw;
+    margin: 0 12vw;
     }
 `
 

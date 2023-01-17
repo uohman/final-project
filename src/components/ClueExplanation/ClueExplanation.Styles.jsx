@@ -42,14 +42,14 @@ export const ClueExplanationContainer = styled.section`
     }
 
     @media (min-width: 1400px) {
-        height: 50vh;
+        width: 30vw;
+        height: 65vh;
     }
 `
 
 export const ClueExplanationSubheading = styled(Span)`
     text-align: right;
     color: var(--color-white);
-    font-size: 1.2rem;
 `
 
 export const ClueExplanationParagraph = styled(Paragraph)`
