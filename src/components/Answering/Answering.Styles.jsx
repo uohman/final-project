@@ -15,6 +15,7 @@ export const Input = styled.input`
     font-size: 1.5rem;
     text-align: center;
     margin: 1rem 0 0.5rem;
+    border-radius: 0;
 
     @media (max-width: 767.98px) {
         width: 80vw;
