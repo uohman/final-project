@@ -23,8 +23,8 @@ export const ClueWrapper = ({ onStepChange }) => {
       </MapillaryContainer>
       {isShown && <Clues />}
       <ButtonContainer>
-        {toggleClueButton && <ClueButton type="button" onClick={handleClick}>CLUE</ClueButton>}
-        <GuessButton type="button" className="button" onClick={onStepChange}>I want to make a guess!</GuessButton>
+        {toggleClueButton && <ClueButton tabIndex={0} type="button" onClick={handleClick}>CLUE</ClueButton>}
+        <GuessButton tabIndex={0} type="button" className="button" onClick={onStepChange}>I want to make a guess!</GuessButton>
       </ButtonContainer>
     </div>
   );

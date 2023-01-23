@@ -10,8 +10,8 @@ import swal from 'sweetalert';
 import { Mapillary } from 'components/Mapillary/Mapillary';
 import { Loading } from 'components/Loading/Loading';
 
-import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
-import { ClueWrapper, MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
+import { InnerWrapper } from 'GlobalStyles';
+import { OuterWrapperLoading, ClueWrapper, MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -29,6 +29,7 @@ export const Clues = () => {
       })
       .then((response) => {
         setGames(response.games)
+        console.log('data is fetched')
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
@@ -59,11 +60,11 @@ export const Clues = () => {
 
 if (loading) {
     return (
-      <OuterWrapper>
+      <OuterWrapperLoading>
         <InnerWrapper>
           <Loading />
         </InnerWrapper>
-      </OuterWrapper>)
+      </OuterWrapperLoading>)
   }
 
   if (currentClue < 5) { //* Stop showing clues after clue 5

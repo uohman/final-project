@@ -5,8 +5,8 @@ import { fetchPlace } from 'api/index.js';
 import { game } from 'reducers/game';
 import { NavBar } from 'components/NavBar/NavBar';
 
-import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
-import { Label, Input, Span } from './Answering.Styles'
+import { InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
+import { OuterWrapperAnswering, Label, Input, Span } from './Answering.Styles'
 
 export const Answering = ({ onStepChange }) => {
   const [city, setCity] = useState('');
@@ -51,7 +51,7 @@ export const Answering = ({ onStepChange }) => {
   return (
     <div>
       <NavBar />
-      <OuterWrapper>
+      <OuterWrapperAnswering>
         <InnerWrapper>
           <form onSubmit={(event) => onSubmitAnswer(event)}>
             <div className="placesAutocomplete">
@@ -87,7 +87,7 @@ export const Answering = ({ onStepChange }) => {
             </div>
           </form>
         </InnerWrapper>
-      </OuterWrapper>
+      </OuterWrapperAnswering>
     </div>
   );
 };

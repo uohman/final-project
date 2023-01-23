@@ -5,9 +5,9 @@ This is the frontend of my final project for the Technigo frontend developer boo
 - React.js
 - Redux
 - Styled-components
-- Mapillary (for street view images)
+- MapillaryJS (for street view images)
 
 ## View it live
-Frontend: https://streetsmart.netlify.app/
-API: https://final-project-api-veooltntuq-lz.a.run.app
+- Frontend: https://streetsmart.netlify.app/
+- API: https://final-project-api-veooltntuq-lz.a.run.app
 

@@ -11,9 +11,9 @@ export const StartPage = ({ onStepChange }) => {
     <OuterWrapper>
       <InnerWrapper>
         <Wrapper>
-          <Span>Welcome to</Span>
-          <TitleImage className="logo" src={logo} width={600} alt="StreetSmart logotype" />
-          <StartPageSubheading>Can you figure out where we are headed?<br />Get as many points as you can.</StartPageSubheading>
+          <Span tabIndex={0}>Welcome to</Span>
+          <TitleImage tabIndex={0} className="logo" src={logo} width={600} alt="StreetSmart logotype" />
+          <StartPageSubheading tabIndex={0}>Can you figure out where we are headed?<br />Get as many points as you can.</StartPageSubheading>
           <StartButton type="button" className="button" onClick={onStepChange}>START</StartButton>
         </Wrapper>
       </InnerWrapper>

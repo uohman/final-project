@@ -1,5 +1,9 @@
 import styled from 'styled-components/macro'
-import { Subheading, Span, Paragraph, PrimaryButton } from 'GlobalStyles';
+import { OuterWrapper, Subheading, Span, Paragraph, PrimaryButton } from 'GlobalStyles';
+
+export const OuterWrapperLoading = styled(OuterWrapper)`
+    height: 94vh;
+`
 
 export const ClueWrapper = styled.div`
     width: 100vw;

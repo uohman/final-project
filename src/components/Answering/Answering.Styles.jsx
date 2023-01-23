@@ -1,5 +1,9 @@
 import styled from 'styled-components/macro'
-import { Paragraph } from 'GlobalStyles';
+import { OuterWrapper, Paragraph } from 'GlobalStyles';
+
+export const OuterWrapperAnswering = styled(OuterWrapper)`
+    height: 94vh;
+`
 
 export const Label = styled(Paragraph)`
     font-size: 1.5rem;
