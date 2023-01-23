@@ -34,7 +34,7 @@ export const ClueExplanationContainer = styled.section`
 
     @media (max-width: 767.98px) {
         width: 80vw;
-        height: 65vh;
+        height: 55vh;
         bottom: 10rem;
         right: unset;
         padding: 1rem;
