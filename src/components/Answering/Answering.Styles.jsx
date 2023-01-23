@@ -3,6 +3,10 @@ import { OuterWrapper, Paragraph } from 'GlobalStyles';
 
 export const OuterWrapperAnswering = styled(OuterWrapper)`
     height: 94vh;
+
+    @media (max-width: 767.98px) { 
+        max-height: -webkit-fill-available;
+    }
 `
 
 export const Label = styled(Paragraph)`
