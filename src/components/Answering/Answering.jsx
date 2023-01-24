@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlace } from 'api/index.js';
 import { game } from 'reducers/game';
-import { NavBar } from 'components/NavBar/NavBar';
+// import { NavBar } from 'components/NavBar/NavBar';
 
-import { InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
-import { OuterWrapperAnswering, Label, Input, Span } from './Answering.Styles'
+import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
+import { Label, Input, Span } from './Answering.Styles'
 
 export const Answering = ({ onStepChange }) => {
   const [city, setCity] = useState('');
@@ -50,8 +50,8 @@ export const Answering = ({ onStepChange }) => {
 
   return (
     <div>
-      <NavBar />
-      <OuterWrapperAnswering>
+      {/* <NavBar /> */}
+      <OuterWrapper>
         <InnerWrapper>
           <form onSubmit={(event) => onSubmitAnswer(event)}>
             <div className="placesAutocomplete">
@@ -87,7 +87,7 @@ export const Answering = ({ onStepChange }) => {
             </div>
           </form>
         </InnerWrapper>
-      </OuterWrapperAnswering>
+      </OuterWrapper>
     </div>
   );
 };
