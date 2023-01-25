@@ -9,6 +9,8 @@ export const NavBarContainer = styled.div`
     padding: 0.8rem;
     height: 6vh;
     width: 100%;
+    position: fixed;
+    z-index: 99;
 `
 
 export const ButtonContainer = styled.div`

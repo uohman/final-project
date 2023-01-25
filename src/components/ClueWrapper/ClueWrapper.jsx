@@ -19,7 +19,7 @@ export const ClueWrapper = ({ onStepChange }) => {
     <div>
       <NavBar />
       <MapillaryContainer>
-        {!isShown && <Mapillary width="auto" height="94vh" imageId="343242160559702" />}
+        {!isShown && <Mapillary width="auto" height="100vh" imageId="343242160559702" />}
       </MapillaryContainer>
       {isShown && <Clues />}
       <ButtonContainer>

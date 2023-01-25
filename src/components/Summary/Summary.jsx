@@ -28,7 +28,7 @@ export const Summary = () => {
     <div>
       <NavBar />
       <MapillaryContainer>
-        <Mapillary width="auto" height="94vh" imageId="174038234492468" />
+        <Mapillary width="auto" height="100vh" imageId="174038234492468" />
       </MapillaryContainer>
       <SummaryWrapper>
         <SummaryContainer>

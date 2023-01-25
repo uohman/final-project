@@ -10,8 +10,8 @@ import swal from 'sweetalert';
 import { Mapillary } from 'components/Mapillary/Mapillary';
 import { Loading } from 'components/Loading/Loading';
 
-import { InnerWrapper } from 'GlobalStyles';
-import { OuterWrapperLoading, ClueWrapper, MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
+import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
+import { ClueWrapper, MapillaryContainer, ClueContainer, SpecialSpan, ClueText, AnotherClueButton } from './Clues.Styles'
 
 export const Clues = () => {
   const [games, setGames] = useState([])
@@ -60,11 +60,11 @@ export const Clues = () => {
 
 if (loading) {
     return (
-      <OuterWrapperLoading>
+      <OuterWrapper>
         <InnerWrapper>
           <Loading />
         </InnerWrapper>
-      </OuterWrapperLoading>)
+      </OuterWrapper>)
   }
 
   if (currentClue < 5) { //* Stop showing clues after clue 5
@@ -72,7 +72,7 @@ if (loading) {
       <div>
             <MapillaryContainer>
               {console.log(currentClue)}
-              <Mapillary width="auto" height="94vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
+              <Mapillary width="auto" height="100vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
             <ClueWrapper>
               <ClueContainer>

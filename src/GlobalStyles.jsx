@@ -15,9 +15,9 @@ export const OuterWrapper = styled.section`
     align-items: center;
     justify-content: center;
 
-    /* @media (max-width: 767.98px) { 
+    @media (max-width: 767.98px) { 
         max-height: -webkit-fill-available;
-    } */
+    }
 `
 
 export const InnerWrapper = styled.section`

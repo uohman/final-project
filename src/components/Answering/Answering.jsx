@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPlace } from 'api/index.js';
 import { game } from 'reducers/game';
-// import { NavBar } from 'components/NavBar/NavBar';
+import { NavBar } from 'components/NavBar/NavBar';
 
 import { OuterWrapper, InnerWrapper, Wrapper, PrimaryButton } from 'GlobalStyles';
 import { Label, Input, Span } from './Answering.Styles'
@@ -50,7 +50,7 @@ export const Answering = ({ onStepChange }) => {
 
   return (
     <div>
-      {/* <NavBar /> */}
+      <NavBar />
       <OuterWrapper>
         <InnerWrapper>
           <form onSubmit={(event) => onSubmitAnswer(event)}>
