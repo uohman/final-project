@@ -87,7 +87,7 @@ if (loading) {
     return (
       <div>
             <MapillaryContainer>
-              <Mapillary width="auto" height="94vh" imageId="814918985897976" />
+              <Mapillary width="auto" height="100vh" imageId="814918985897976" />
             </MapillaryContainer>
       </div>
     )
