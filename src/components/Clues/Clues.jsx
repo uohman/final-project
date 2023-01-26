@@ -21,7 +21,6 @@ export const Clues = () => {
 
   //* Fetching clues
   const fetchClues = () => {
-    console.log('loading');
     setLoading(true);
     fetch('https://final-project-api-veooltntuq-lz.a.run.app/games')
       .then((response) => {
@@ -29,7 +28,6 @@ export const Clues = () => {
       })
       .then((response) => {
         setGames(response.games)
-        console.log('data is fetched')
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
@@ -71,7 +69,6 @@ if (loading) {
     return (
       <div>
             <MapillaryContainer>
-              {console.log(currentClue)}
               <Mapillary width="auto" height="100vh" imageId={currentClue === 0 ? '343242160559702' : currentClue === 1 ? '463849228173207' : currentClue === 2 ? '273852291114652' : currentClue === 3 ? '953489715410448' : currentClue === 4 ? '814918985897976' : ''} />
             </MapillaryContainer>
             <ClueWrapper>

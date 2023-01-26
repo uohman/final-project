@@ -37,10 +37,8 @@ export const Answering = ({ onStepChange }) => {
     let scoreValueThatTheUserGets;
     if (userAnswer === correctAnswer) {
       scoreValueThatTheUserGets = scoreFromReduxStore + 1;
-      console.log('Correct answer')
     } else {
       scoreValueThatTheUserGets = 0;
-      console.log('Wrong answer')
     }
     dispatch(game.actions.setScore(scoreValueThatTheUserGets));
     dispatch(game.actions.setCorrectAnswer(correctAnswer));

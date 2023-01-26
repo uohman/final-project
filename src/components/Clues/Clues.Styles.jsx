@@ -81,10 +81,6 @@ export const AnotherClueButton = styled(PrimaryButton)`
     :hover {
         color: var(--color-white);
     }
-
-    /* @media (max-width: 767.98px) {
-        margin: 1.5rem 0 0;
-    } */
 `
 
 export const MapillaryContainer = styled.div`

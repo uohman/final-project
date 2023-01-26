@@ -94,10 +94,6 @@ export const PrimaryButton = styled.button`
         color: var(--color-white);
         transform: scale(1.1);
     }
-
-    @media (max-width: 767.98px) {
-        /* margin: 0.5 0 0; */
-    }
 `
 
 export default GlobalStyles;
